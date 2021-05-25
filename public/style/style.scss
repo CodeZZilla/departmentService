@@ -1,0 +1,111 @@
+$orange-color: #FF6700;
+$platinum-color: #EBEBEB;
+$silver-color: #C0C0C0;
+$first-blue-color: #3A6EA5;
+$second-blue-color: #004E98;
+header{
+    background-color: $first-blue-color;
+}
+footer{
+    background-color: $silver-color;
+}
+.footer{
+    // height: 80px;
+    background-color: #c0c0c02f;
+    .arrow-back{
+        height: 60px;
+        // background-color: #ebebeba8;
+        padding: 10px;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .submit-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .loading{
+            display: none;
+        }
+    }
+}
+.hi-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+._card-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .buttons{
+        display: flex;
+    }
+    ._card-body{
+    }
+    .card-wrapper{
+        border: 1px solid #eee;
+        padding: 15px;
+    }
+    ._card{
+        position: relative;
+        width: 400px;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 0.8s ease;
+        -webkit-transition: all 0.8s ease;
+        -moz-transition: all 0.8s ease;
+        -ms-transition: all 0.8s ease;
+        -o-transition: all 0.8s ease;
+    }
+    .front{
+        position: absolute;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        background: inherit;
+        // width: 100%;
+        // height: 100%;
+    
+    }
+    .back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        background: inherit;
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+    .flipCard{
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+    .btn{
+        width: 400px;
+    }
+}
+.schedule-block{
+    background-color: $platinum-color;
+    // margin: 40px;
+    width: 250px;
+    height: max-content;
+    display: flex;
+}
+.schedule-table{
+    tr{
+        text-align: center;
+    }
+}

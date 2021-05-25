@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\style\style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>DepartmentService</title>
+</head>
+<body>
+    <%- include('header') %>
+    <div class="wrapper" style="min-height: 70vh;">
+        <main>
+            <div class="hi">
+                <div class="container-fluid">
+                    <div class="hi-container">
+                        <h2>Вітаємо у сервісі автоматизації роботи кафедри ВВНЗ!</h2>
+                        <div class="_card-container">
+                            <div class="_card text-center m-3" id="card">
+                                <div class="_card-body front">
+                                    <div class="card-wrapper shadow-sm rounded">
+                                        <h5>Оберіть як ви бажаєте здійснити вхід</h5>
+                                        <a href="/guest" class="btn btn-primary btn-lg m-1 flip-btn">Гість</a>
+                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Студент</button>
+                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Викладач</button>
+                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Адміністратор</button>
+                                    </div>
+                                </div>
+                                <div class="_card-body back">
+                                    <div class="card-wrapper shadow-sm rounded">
+                                        <h5>Введіть дані для авторизації</h5>
+                                        <div class="input-group flex-nowrap">
+                                            <input type="text" class="form-control m-1" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                                      </div>
+                                      <div class="input-group flex-nowrap">
+                                        <input type="password" class="form-control m-1" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                                      </div>
+                                        <div class="buttons">
+                                            <button type="button" onclick="onfront()" class="btn btn-outline-primary btn-lg m-1 flip-btn">Назад</button>
+                                            <a type="button" onclick="login()" class="btn btn-primary btn-lg m-1 flip-btn">Увійти</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include('footer') %>
+    <script>
+        const card = document.getElementById("card");
+        function onfront(){
+            card.classList.toggle("flipCard");
+        }
+    </script>
+</body>
+</html>
