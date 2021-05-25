@@ -3,15 +3,33 @@ $platinum-color: #EBEBEB;
 $silver-color: #C0C0C0;
 $first-blue-color: #3A6EA5;
 $second-blue-color: #004E98;
+$pz: linear-gradient(254.74deg, #68A816 0.36%, #BCEE7C 93.63%);
+$gz: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
+$lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
+body{
+
+}
 header{
     background-color: $first-blue-color;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    .header-account{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h6{
+            margin-right: 10px;
+        }
+    }
 }
 footer{
     background-color: $silver-color;
 }
 .footer{
     // height: 80px;
-    background-color: #c0c0c02f;
+    background-color: #c0c0c072;
     .arrow-back{
         height: 60px;
         // background-color: #ebebeba8;
@@ -30,6 +48,9 @@ footer{
             display: none;
         }
     }
+}
+main{
+    margin: 30px 0;
 }
 .hi-container{
     width: 100%;
@@ -97,7 +118,28 @@ footer{
         width: 400px;
     }
 }
+.schedule{
+    
 .schedule-block{
+    // background-color: $pz;
+    // margin: 40px;
+    width: 250px;
+    height: max-content;
+    display: flex;
+    .text-group{
+
+    }
+    &:nth-child(3n+1){
+        background: $gz;
+    }
+    &:nth-child(2n+1){
+        background: $pz;
+    }
+    &:nth-child(2n+1){
+        background: $lec-sampo;
+    }
+}
+.schedule-block-admin{
     background-color: $platinum-color;
     // margin: 40px;
     width: 250px;
@@ -108,4 +150,13 @@ footer{
     tr{
         text-align: center;
     }
+}
+    .schedule-title{
+        display: flex;
+        .form-select{
+            margin-left: 20px;
+            width: 150px;
+        }
+    }
+
 }

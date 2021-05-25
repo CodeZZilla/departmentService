@@ -12,6 +12,9 @@ app.get('/', function(req, res){
     res.render('index');
 });
 app.get('/guest', function(req, res){
+    res.render('guest.ejs');
+});
+app.get('/admin', function(req, res){
     res.render('scheduleAdmin.ejs');
 });
 app.listen(PORT, ()=>{

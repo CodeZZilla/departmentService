@@ -11,8 +11,20 @@
 <body>
     <%- include('header') %>
     <div class="wrapper">
-        <main>
-            <%- include('scheduleTableAdmin.ejs') %>
+        <main class="schedule">
+            <section class="schedule-title container-fluid">
+                <h2>Розклад занять кафедри на</h2>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>сьогодні</option>
+                    <option value="1">завтра</option>
+                    <option value="2">післязавтра</option>
+                  </select>
+            </section>
+            <div class="schedule container-fluid">
+                <div class="schedule-container">
+                    <%- include('scheduleTable.ejs') %>
+                </div>
+            </div>
         </main>
     </div>
     <%- include('footer') %>

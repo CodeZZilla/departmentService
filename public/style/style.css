@@ -1,5 +1,29 @@
 header {
   background-color: #3A6EA5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .header-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .header-account h6 {
+  margin-right: 10px;
 }
 
 footer {
@@ -7,7 +31,7 @@ footer {
 }
 
 .footer {
-  background-color: #c0c0c02f;
+  background-color: #c0c0c072;
 }
 .footer .arrow-back {
   height: 60px;
@@ -37,6 +61,10 @@ footer {
 }
 .footer .submit-button .loading {
   display: none;
+}
+
+main {
+  margin: 30px 0;
 }
 
 .hi-container {
@@ -119,7 +147,25 @@ footer {
   width: 400px;
 }
 
-.schedule-block {
+.schedule .schedule-block {
+  width: 250px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.schedule .schedule-block:nth-child(3n+1) {
+  background: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
+}
+.schedule .schedule-block:nth-child(2n+1) {
+  background: linear-gradient(254.74deg, #68A816 0.36%, #BCEE7C 93.63%);
+}
+.schedule .schedule-block:nth-child(2n+1) {
+  background: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
+}
+.schedule .schedule-block-admin {
   background-color: #EBEBEB;
   width: 250px;
   height: -webkit-max-content;
@@ -129,7 +175,15 @@ footer {
   display: -ms-flexbox;
   display: flex;
 }
-
-.schedule-table tr {
+.schedule .schedule-table tr {
   text-align: center;
+}
+.schedule .schedule-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.schedule .schedule-title .form-select {
+  margin-left: 20px;
+  width: 150px;
 }
