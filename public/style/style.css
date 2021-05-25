@@ -147,6 +147,19 @@ main {
   width: 400px;
 }
 
+.schedule .gz {
+  background: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
+}
+.schedule .pz {
+  background: linear-gradient(254.74deg, #5a8b19 0.36%, #89a366 93.63%);
+}
+.schedule .l {
+  background: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
+}
+.schedule .gray {
+  filter: grayscale(100);
+  -webkit-filter: grayscale(100);
+}
 .schedule .schedule-block {
   width: 250px;
   height: -webkit-max-content;
@@ -155,15 +168,37 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
-.schedule .schedule-block:nth-child(3n+1) {
-  background: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
+.schedule .schedule-block p {
+  margin: 0;
 }
-.schedule .schedule-block:nth-child(2n+1) {
-  background: linear-gradient(254.74deg, #68A816 0.36%, #BCEE7C 93.63%);
+.schedule .schedule-block .text-group {
+  font-weight: 900;
+  font-size: 60px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.815);
 }
-.schedule .schedule-block:nth-child(2n+1) {
-  background: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
+.schedule .schedule-block .second {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.schedule .schedule-block .discipline {
+  font-weight: bold;
+  font-size: 39px;
+  line-height: 39px;
+  font-style: normal;
+  text-align: center;
+  color: #FFFFFF;
+}
+.schedule .schedule-block .teacher {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
 }
 .schedule .schedule-block-admin {
   background-color: #EBEBEB;
