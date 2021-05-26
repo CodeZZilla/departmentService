@@ -22,12 +22,11 @@ const adminRouter = require('./routes/adminRouter.js');
 const teacherRouter = require('./routes/teacherRouter.js');
 const studentRouter = require('./routes/studentRouter.js');
 
-
 app.use('/', mainRouter);
 app.use('/guest', guestRouter);
 app.use('/admin', adminRouter);
-app.use('/teacher', teacherRouter)
-app.use('/student', studentRouter)
+app.use('/teacher', teacherRouter);
+app.use('/student', studentRouter);
 
 app.use(function (req, res, next) {
     res.status(404).render('404');
