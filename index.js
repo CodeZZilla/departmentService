@@ -24,11 +24,6 @@ app.use('/', mainRouter);
 app.use(function (req, res, next) {
     res.status(404).render('page404')
 });
-<<<<<<< HEAD
-app.get('/404', function(req, res){
-    res.render('404.ejs');
-});
-=======
 // app.get('/', function(req, res){
 //     res.render('index');
 // });
@@ -38,7 +33,6 @@ app.get('/404', function(req, res){
 // app.get('/admin', function(req, res){
 //     res.render('scheduleAdmin.ejs');
 // });
->>>>>>> 4b0c0aecb114aed0ce88ed269ea1edc3febd345e
 app.listen(PORT, ()=>{
     console.log('Server Start!!!!')
 });
