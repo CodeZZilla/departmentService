@@ -27,21 +27,23 @@
                                         <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Адміністратор</button>
                                     </div>
                                 </div>
-                                <div class="_card-body back">
-                                    <div class="card-wrapper shadow-sm rounded">
-                                        <h5>Введіть дані для авторизації</h5>
-                                        <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control m-1" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                                      </div>
-                                      <div class="input-group flex-nowrap">
-                                        <input type="password" class="form-control m-1" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
-                                      </div>
-                                        <div class="buttons">
-                                            <button type="button" onclick="onfront()" class="btn btn-outline-primary btn-lg m-1 flip-btn">Назад</button>
-                                            <a type="button" onclick="login()" class="btn btn-primary btn-lg m-1 flip-btn">Увійти</a>
+                                <form action="/logIn" method="post">
+                                    <div class="_card-body back">
+                                        <div class="card-wrapper shadow-sm rounded">
+                                            <h5>Введіть дані для авторизації</h5>
+                                            <div class="input-group flex-nowrap">
+                                                <input name="username" type="text" class="form-control m-1" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                                            </div>
+                                            <div class="input-group flex-nowrap">
+                                                <input name="password" type="password" class="form-control m-1" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                                            </div>
+                                            <div class="buttons">
+                                                <button type="button" onclick="onfront()" class="btn btn-outline-primary btn-lg m-1 flip-btn">Назад</button>
+                                                <input type="submit"  class="btn btn-primary btn-lg m-1 flip-btn" value="Увійти">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
