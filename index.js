@@ -16,19 +16,18 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const mainRouter = require('./routes/mainRouter.js')
-const guestRouter = require('./routes/guestRouter.js')
-const adminRouter = require('./routes/adminRouter.js')
+const mainRouter = require('./routes/mainRouter.js');
+const guestRouter = require('./routes/guestRouter.js');
+const adminRouter = require('./routes/adminRouter.js');
 
 app.use('/', mainRouter);
-app.use('/guest', guestRouter)
-app.use('/admin', adminRouter)
-
+app.use('/guest', guestRouter);
+app.use('/admin', adminRouter);
 
 app.use(function (req, res, next) {
-    res.status(404).render('404')
+    res.status(404).render('404');
 });
 
 app.listen(PORT, ()=>{
-    console.log('Server Start!!!!')
+    console.log('Server Start!!!!');
 });

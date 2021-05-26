@@ -5,6 +5,6 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const adminRouter = express.Router();
 
 adminRouter.get('/', adminController.getAll);
-// mainRouter.post('/login', urlencodedParser, mainController.login)
+adminRouter.get('/scheduleAdmin', adminController.getScheduleAdmin)
 
 module.exports=adminRouter;
