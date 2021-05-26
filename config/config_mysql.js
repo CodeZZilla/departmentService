@@ -5,4 +5,5 @@ const configMysql = {
     database: 'heroku_234cc0bd456100d',
 };
 
+
 module.exports = configMysql;
