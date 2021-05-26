@@ -16,22 +16,73 @@
                 <div class="container-fluid admin-panel-container">
                       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Налаштування викладачів</button>
+                          <button class="nav-link active" id="pills-disciplinesSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-disciplinesSettings" type="button" role="tab" aria-controls="pills-disciplinesSettings" aria-selected="true">Дисципліни</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Налаштування аккаунту адміністратора</button>
+                          <button class="nav-link" id="pills-groupSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-groupSettings" type="button" role="tab" aria-controls="pills-groupSettings" aria-selected="true">Групи</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-adminSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-adminSettings" type="button" role="tab" aria-controls="pills-adminSettings" aria-selected="false">Налаштування аккаунта</button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <a href="/admin/scheduleAdmin" class="nav-link" >Розклад занять</a>
                           <!-- schedule admin route  -->
                         </li>
                       </ul>
+                      .
                       <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                            <%- include('scheduleTableAdmin.ejs') %>
+                        <div class="tab-pane fade show active" id="pills-disciplinesSettings" role="tabpanel" aria-labelledby="pills-disciplinesSettings-tab">
+                            <div class="teacherSettings" style="position: relative;">
+                                <h2>Налаштування дисциплін</h2>
+                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                      <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                              OOP
+                                          </button>
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                            OOP
+                                        </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                          <div class="accordion-body">
+                                              <div class="block">
+                                                  <div class="first" style="width: 50%;">
+                                                      
+                                                  </div>
+                                                  <div class="second" style="width: 50%;">
+  
+                                                  </div>
+                                              </div>
+                                              <div class="btns">
+                                                  <button type="button" class="btn btn-outline-danger m-1">
+                                                      Видалити викладача</button>
+                                                  <button type="button" class="btn btn-success m-1">
+                                                      Зберегти зміни</button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                  </div>
+                                  <div class="static-btns" style="position: fixed; bottom: 14%; right: 5%; display: flex;">
+                                    <button type="button" class="btn btn-primary m-1" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                                        Додати нового</button>
+                                  </div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                        <div class="tab-pane fade" id="pills-groupSettings" role="tabpanel" aria-labelledby="pills-groupSettings-tab">
+                            <div class="groupSettings">
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-adminSettings" role="tabpanel" aria-labelledby="pills-adminSettings-tab">
+                            <div class="adminSettings">
+
+                            </div>
+                        </div>
                       </div>
                 </div>
             </section>

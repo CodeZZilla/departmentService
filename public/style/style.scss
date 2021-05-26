@@ -60,6 +60,7 @@ main{
     margin: 50px 0;
 }
 ._card-container{
+    margin: 30px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -69,6 +70,8 @@ main{
         display: flex;
     }
     ._card-body{
+        max-width: 600px;
+        width: 100%;
     }
     .card-wrapper{
         border: 1px solid #eee;
@@ -84,35 +87,6 @@ main{
         -moz-transition: all 0.8s ease;
         -ms-transition: all 0.8s ease;
         -o-transition: all 0.8s ease;
-    }
-    .front{
-        position: absolute;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        background: inherit;
-        // width: 100%;
-        // height: 100%;
-    
-    }
-    .back{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        background: inherit;
-        transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
-    }
-    .flipCard{
-        transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
     }
     .btn{
         width: 400px;
@@ -189,15 +163,10 @@ main{
 
 }
 .admin-panel-container{
-    .cards-block{
-        display: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        .card{
-            width: 45%;
-            margin: 1% 2%;
+    .accordition-body{
+        .block{
+            display: flex;
             
         }
     }
-
 }
