@@ -17,6 +17,9 @@ app.get('/guest', function(req, res){
 app.get('/admin', function(req, res){
     res.render('scheduleAdmin.ejs');
 });
+app.get('/404', function(req, res){
+    res.render('404.ejs');
+});
 app.listen(PORT, ()=>{
     console.log('Server Start!!!!')
 });
