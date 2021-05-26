@@ -209,3 +209,9 @@ main {
   display: -ms-flexbox;
   display: flex;
 }
+.admin-panel-container .discipline .trash-icon {
+  opacity: 60%;
+}
+.admin-panel-container .discipline .trash-icon:hover {
+  opacity: 100%;
+}

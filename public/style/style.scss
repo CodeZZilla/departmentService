@@ -169,4 +169,12 @@ main{
             
         }
     }
+    .discipline{
+        .trash-icon{
+            opacity: 60%;
+            &:hover{
+                opacity: 100%;
+            }
+        }
+    }
 }
