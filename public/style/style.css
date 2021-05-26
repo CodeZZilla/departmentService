@@ -1,4 +1,5 @@
 header {
+  width: 100%;
   background-color: #3A6EA5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,6 +28,7 @@ header .header-account h6 {
 }
 
 footer {
+  width: 100%;
   background-color: #C0C0C0;
 }
 
@@ -161,7 +163,7 @@ main {
   -webkit-filter: grayscale(100);
 }
 .schedule .schedule-block {
-  width: 250px;
+  padding: 5px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -221,4 +223,18 @@ main {
 .schedule .schedule-title .form-select {
   margin-left: 20px;
   width: 150px;
+}
+
+.admin-panel-container .cards-block {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.admin-panel-container .cards-block .card {
+  width: 45%;
+  margin: 1% 2%;
 }
