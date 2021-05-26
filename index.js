@@ -18,20 +18,17 @@ app.set('view engine', 'ejs');
 
 const mainRouter = require('./routes/mainRouter.js')
 const guestRouter = require('./routes/guestRouter.js')
+const adminRouter = require('./routes/adminRouter.js')
 
 app.use('/', mainRouter);
 app.use('/guest', guestRouter)
+app.use('/admin', adminRouter)
+
 
 app.use(function (req, res, next) {
     res.status(404).render('404')
 });
-// app.get('/', function(req, res){
-//     res.render('index');
-// });
 
-// app.get('/admin', function(req, res){
-//     res.render('scheduleAdmin.ejs');
-// });
 app.listen(PORT, ()=>{
     console.log('Server Start!!!!')
 });
