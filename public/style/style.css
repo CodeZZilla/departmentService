@@ -224,17 +224,3 @@ main {
   margin-left: 20px;
   width: 150px;
 }
-
-.admin-panel-container .cards-block {
-  display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.admin-panel-container .cards-block .card {
-  width: 45%;
-  margin: 1% 2%;
-}
