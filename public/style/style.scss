@@ -6,10 +6,9 @@ $second-blue-color: #004E98;
 $pz: linear-gradient(254.74deg, #5a8b19 0.36%, #89a366 93.63%);
 $gz: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
 $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
-body{
 
-}
 header{
+    width: 100%;
     background-color: $first-blue-color;
     display: flex;
     color: white;
@@ -25,6 +24,7 @@ header{
     }
 }
 footer{
+    width: 100%;
     background-color: $silver-color;
 }
 .footer{
@@ -134,8 +134,8 @@ main{
 .schedule-block{
     // background-color: $pz;
     // margin: 40px;
-    // padding: 0 10px;
-    width: 250px;
+    padding: 5px;
+    // width: 250px;
     height: max-content;
     display: flex;
     justify-content: space-around;
