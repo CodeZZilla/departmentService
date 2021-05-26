@@ -22,16 +22,9 @@ const guestRouter = require('./routes/guestRouter.js')
 app.use('/', mainRouter);
 app.use('/guest', guestRouter)
 
-app.get('/guest', function(req, res){
-    res.render('guest.ejs');
-});
-<<<<<<< HEAD
-=======
-
 app.use(function (req, res, next) {
     res.status(404).render('404')
 });
->>>>>>> 9d8ce83e086e6850b2f726f7992dbe639ecc034c
 // app.get('/', function(req, res){
 //     res.render('index');
 // });
