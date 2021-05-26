@@ -5,46 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\style\style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>DepartmentService</title>
 </head>
 <body>
-    <%- include('header') %>
-    <div class="wrapper" style="min-height: 70vh;">
-        <main>
-            <div class="hi">
-                <div class="container-fluid">
-                    <div class="hi-container">
-                        <h2>Вітаємо у сервісі автоматизації роботи кафедри ВВНЗ!</h2>
-                        <div class="_card-container">
+<%- include('header') %>
+<div class="wrapper" style="min-height: 70vh;">
+    <main>
+        <div class="hi">
+            <div class="container-fluid">
+                <div class="hi-container">
+                    <h2>Вітаємо у сервісі автоматизації роботи кафедри ВВНЗ!</h2>
+                    <div class="_card-container">
+
+                        <form action="/logIn" method="post">
                             <div class="_card-body back">
                                 <div class="card-wrapper shadow-sm rounded">
                                     <h5 style="text-align: center;">Введіть дані для авторизації</h5>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control m-1" placeholder="Логін" aria-label="Username" aria-describedby="addon-wrapping">
-                                  </div>
-                                  <div class="input-group flex-nowrap">
-                                    <input type="password" class="form-control m-1" placeholder="Пароль" aria-label="Password" aria-describedby="addon-wrapping">
-                                  </div>
+                                        <input name="username" type="text" class="form-control m-1" placeholder="Логін"
+                                               aria-label="Username" aria-describedby="addon-wrapping">
+                                    </div>
+                                    <div class="input-group flex-nowrap">
+                                        <input name="password" type="password" class="form-control m-1" placeholder="Пароль"
+                                               aria-label="Password" aria-describedby="addon-wrapping">
+                                    </div>
                                     <div class="buttons">
-                                        <a type="button" href="/guest" class="btn btn-outline-primary btn-lg m-1 flip-btn">Увійти як гість</a>
-                                        <a type="button" href="/" class="btn btn-primary btn-lg m-1 flip-btn">Авторизуватись</a>
+                                        <a type="button" href="/guest"
+                                           class="btn btn-outline-primary btn-lg m-1 flip-btn">Увійти як гість</a>
+                                        <input type="submit" class="btn btn-primary btn-lg m-1 flip-btn"
+                                               value="Авторизуватись">
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
-    <%- include('footer') %>
-    <script>
-        // const card = document.getElementById("card");
-        // function onfront(){
-        //     card.classList.toggle("flipCard");
-        // }
-        document.getElementById("header_acc").style.display = "none";
-    </script>
+        </div>
+
+    </main>
+</div>
+<%- include('footer') %>
+<script>
+    // const card = document.getElementById("card");
+    // function onfront(){
+    //     card.classList.toggle("flipCard");
+    // }
+    document.getElementById("header_acc").style.display = "none";
+</script>
 </body>
 </html>
