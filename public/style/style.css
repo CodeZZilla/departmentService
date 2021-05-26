@@ -85,6 +85,7 @@ main {
 }
 
 ._card-container {
+  margin: 30px;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -103,6 +104,10 @@ main {
   display: -ms-flexbox;
   display: flex;
 }
+._card-container ._card-body {
+  max-width: 600px;
+  width: 100%;
+}
 ._card-container .card-wrapper {
   border: 1px solid #eee;
   padding: 15px;
@@ -118,32 +123,6 @@ main {
   -moz-transition: all 0.8s ease;
   -ms-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
-}
-._card-container .front {
-  position: absolute;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  background: inherit;
-}
-._card-container .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  background: inherit;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-}
-._card-container .flipCard {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
 }
 ._card-container .btn {
   width: 400px;

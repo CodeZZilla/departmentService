@@ -17,29 +17,18 @@
                     <div class="hi-container">
                         <h2>Вітаємо у сервісі автоматизації роботи кафедри ВВНЗ!</h2>
                         <div class="_card-container">
-                            <div class="_card text-center m-3" id="card">
-                                <div class="_card-body front">
-                                    <div class="card-wrapper shadow-sm rounded">
-                                        <h5>Оберіть як ви бажаєте здійснити вхід</h5>
-                                        <a href="/guest" class="btn btn-primary btn-lg m-1 flip-btn">Гість</a>
-                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Студент</button>
-                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Викладач</button>
-                                        <button type="button" onclick="onfront()" class="btn btn-action btn-primary btn-lg m-1 flip-btn">Адміністратор</button>
-                                    </div>
-                                </div>
-                                <div class="_card-body back">
-                                    <div class="card-wrapper shadow-sm rounded">
-                                        <h5>Введіть дані для авторизації</h5>
-                                        <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control m-1" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                                      </div>
-                                      <div class="input-group flex-nowrap">
-                                        <input type="password" class="form-control m-1" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
-                                      </div>
-                                        <div class="buttons">
-                                            <button type="button" onclick="onfront()" class="btn btn-outline-primary btn-lg m-1 flip-btn">Назад</button>
-                                            <a type="button" onclick="login()" class="btn btn-primary btn-lg m-1 flip-btn">Увійти</a>
-                                        </div>
+                            <div class="_card-body back">
+                                <div class="card-wrapper shadow-sm rounded">
+                                    <h5 style="text-align: center;">Введіть дані для авторизації</h5>
+                                    <div class="input-group flex-nowrap">
+                                        <input type="text" class="form-control m-1" placeholder="Логін" aria-label="Username" aria-describedby="addon-wrapping">
+                                  </div>
+                                  <div class="input-group flex-nowrap">
+                                    <input type="password" class="form-control m-1" placeholder="Пароль" aria-label="Password" aria-describedby="addon-wrapping">
+                                  </div>
+                                    <div class="buttons">
+                                        <a type="button" href="/guest" class="btn btn-outline-primary btn-lg m-1 flip-btn">Увійти як гість</a>
+                                        <a type="button" onclick="login()" class="btn btn-primary btn-lg m-1 flip-btn">Авторизуватись</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,10 +40,10 @@
     </div>
     <%- include('footer') %>
     <script>
-        const card = document.getElementById("card");
-        function onfront(){
-            card.classList.toggle("flipCard");
-        }
+        // const card = document.getElementById("card");
+        // function onfront(){
+        //     card.classList.toggle("flipCard");
+        // }
         document.getElementById("header_acc").style.display = "none";
     </script>
 </body>
