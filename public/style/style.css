@@ -224,3 +224,9 @@ main {
   margin-left: 20px;
   width: 150px;
 }
+
+.admin-panel-container .accordition-body .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
