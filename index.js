@@ -27,7 +27,7 @@ app.get('/guest', function(req, res){
 });
 
 app.use(function (req, res, next) {
-    res.status(404).render('page404')
+    res.status(404).render('404')
 });
 // app.get('/', function(req, res){
 //     res.render('index');
