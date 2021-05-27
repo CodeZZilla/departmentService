@@ -1,8 +1,8 @@
 const configMysql = {
     host: 'eu-cdbr-west-01.cleardb.com',
-    user: 'bf847fe0184e78',
-    password: '20171732',
-    database: 'heroku_234cc0bd456100d',
+    user: 'bd0bcdb6c96c9c',
+    password: '9423f78e',
+    database: 'heroku_70edf5a71dce6a8',
 };
 
 
