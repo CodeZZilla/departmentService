@@ -209,9 +209,14 @@ main {
   display: -ms-flexbox;
   display: flex;
 }
-.admin-panel-container .discipline-block .trash--icon {
+.admin-panel-container .discipline-block .trash-icon {
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   opacity: 60%;
 }
-.admin-panel-container .discipline-block .trash--icon:hover {
+.admin-panel-container .discipline-block .trash-icon:hover {
   opacity: 100%;
 }

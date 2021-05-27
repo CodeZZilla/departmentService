@@ -170,7 +170,15 @@ main{
         }
     }
     .discipline-block{
-        .trash--icon{
+        tr{
+            // display: flex;
+        }
+        .trash-icon{
+            transition: .3s ease;
+            -webkit-transition: .3s ease;
+            -moz-transition: .3s ease;
+            -ms-transition: .3s ease;
+            -o-transition: .3s ease;
             opacity: 60%;
             &:hover{
                 opacity: 100%;
