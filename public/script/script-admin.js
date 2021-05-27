@@ -1,0 +1,1 @@
+// sequelize-auto -h eu-cdbr-west-01.cleardb.com -d heroku_70edf5a71dce6a8 -u bd0bcdb6c96c9c -x 9423f78e
