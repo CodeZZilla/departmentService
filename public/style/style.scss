@@ -70,7 +70,7 @@ main{
         display: flex;
     }
     ._card-body{
-        max-width: 600px;
+        max-width: 450px;
         width: 100%;
     }
     .card-wrapper{
@@ -169,8 +169,8 @@ main{
             
         }
     }
-    .discipline{
-        .trash-icon{
+    .discipline-block{
+        .trash--icon{
             opacity: 60%;
             &:hover{
                 opacity: 100%;

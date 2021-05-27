@@ -105,7 +105,7 @@ main {
   display: flex;
 }
 ._card-container ._card-body {
-  max-width: 600px;
+  max-width: 450px;
   width: 100%;
 }
 ._card-container .card-wrapper {
@@ -209,9 +209,9 @@ main {
   display: -ms-flexbox;
   display: flex;
 }
-.admin-panel-container .discipline .trash-icon {
+.admin-panel-container .discipline-block .trash--icon {
   opacity: 60%;
 }
-.admin-panel-container .discipline .trash-icon:hover {
+.admin-panel-container .discipline-block .trash--icon:hover {
   opacity: 100%;
 }
