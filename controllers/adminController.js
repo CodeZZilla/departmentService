@@ -38,12 +38,14 @@ exports.logOut = function (req, res, next) {
     });
 };
 
+
 exports.addDiscipline = function (req, res) {
     console.log(req.body)
     Disciplines.addDisciplines(req.body).then(() =>
         res.send('OK!')
     )
 };
+
 
 exports.deleteDiscipline = async function (req, res) {
     await Disciplines.deleteDisciplines(req.body);

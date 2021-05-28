@@ -11,7 +11,29 @@
 <body>
     <%- include('header') %>
     <main>
-        <h1>TEACHER</h1>
+        <section class="nav-teacher">
+            <h1>Вітаю, ім'я \ призвіще</h1>
+            <hr>
+        </section>
+        <section class="groups-block">
+            <button type="button" class="btn btn-primary">Додати нового студента</button>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="281-tab" data-bs-toggle="tab" data-bs-target="#281" type="button" role="tab" aria-controls="281" aria-selected="true">281</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="282-tab" data-bs-toggle="tab" data-bs-target="#282" type="button" role="tab" aria-controls="282" aria-selected="false">282</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="281" role="tabpanel" aria-labelledby="281-tab">
+                    
+                </div>
+                <div class="tab-pane fade" id="282" role="tabpanel" aria-labelledby="282-tab">
+
+                </div>
+              </div>
+        </section>
     </main>
     <%- include('footer') %>
 </body>
