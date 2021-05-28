@@ -100,6 +100,11 @@
                         </div>
                         <div class="tab-pane fade" id="pills-groupSettings" role="tabpanel" aria-labelledby="pills-groupSettings-tab">
                             <div class="groupSettings">
+                              <div class="groupsettings-header" style="display: flex;">
+                                <h2>Налаштування груп</h2>
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addGroupModal">Додати нову групу</button>
+                              </div>
+                              <hr>
                               <table class="table table-stripted">
                                 <tbody>
                                   <tr>
@@ -118,19 +123,23 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-adminSettings" role="tabpanel" aria-labelledby="pills-adminSettings-tab">
-                            <div class="adminSettings">
-                              <div class="mb-3">
-                                <label for="changelogin" class="form-label">Змінити логін</label>
-                                <input type="email" class="form-control" id="changelogin" placeholder="">
+                          <div class="adminsettings">
+                            <div class="adminsettings-header" style="display: flex;">
+                              <h2>Особистий кабінет адміністратора</h2>
+                            </div>
+                              <div class="adminSettings">
+                                <div class="mb-3">
+                                  <label for="changelogin" class="form-label">Змінити логін</label>
+                                  <input type="email" class="form-control" id="changelogin" placeholder="">
+                                </div>
                               </div>
-                            </div>
-                            <div class="mb-3">
-                              <label for="changepassword" class="form-label">Змінити пароль</label>
-                              <input type="email" class="form-control" id="changepassword" placeholder="">
-                            </div>
-                            <button type="button" class="btn btn-primary">Зберегти зміни</button>
-
-                        </div>
+                              <div class="mb-3">
+                                <label for="changepassword" class="form-label">Змінити пароль</label>
+                                <input type="email" class="form-control" id="changepassword" placeholder="">
+                              </div>
+                              <button type="button" class="btn btn-primary">Зберегти зміни</button>  
+                          `</div>
+                          </div>
                     </div>
                 </div>
 
@@ -198,6 +207,30 @@
                   </select>
                   <label for="floatingSelect">Викладач</label>
               </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+            <button type="button" class="btn btn-primary">Зберегти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal fade" tabindex="-1" id="addGroupModal" aria-labelledby="addGroupModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Додати нову групу</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="discipline" placeholder="name@example.com">
+                <label for="floatingInput">Номер групи</label>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
