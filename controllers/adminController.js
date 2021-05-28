@@ -10,5 +10,8 @@ exports.getScheduleAdmin=function (req, res) {
 }
 
 exports.addDiscipline=function (req, res) {
-    // Disciplines.addDisciplines(req.body).then(r => )
+    console.log(req.body.discipline)
+    const arr= [req.body.discipline, req.body.abbreviation]
+    Disciplines.addDisciplines(req.body).then(()=>
+    res.send('OK!'))
 }
