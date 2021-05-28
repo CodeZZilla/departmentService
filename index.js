@@ -12,12 +12,13 @@ const app = express();
 const flash = require('express-flash');
 
 app.use(express.json());
+app.use(flash());
 app.use(express.urlencoded({extended: false}));
 
 app.use(
     session({
         secret: 'Dswfdd2ds',
-        store: new FileStore(),
+
         cookie: {
             path: '/',
             httpOnly: true,

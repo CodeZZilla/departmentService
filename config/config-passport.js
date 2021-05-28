@@ -21,10 +21,13 @@ passport.deserializeUser(function (id, done) {
 
 passport.use(
     new LocalStrategy({usernameField: 'username'}, function (username, password, done) {
+
         if (username === userDB.username && password === userDB.password) {
             return done(null, userDB);
         } else {
-            return done(null, false);
+            return done(null, false, {message: 'Невірні дані для авторизації'});
         }
+
+
     })
 );

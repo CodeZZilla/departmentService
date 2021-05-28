@@ -22,7 +22,12 @@
                         <form action="/logIn" method="post">
                             <div class="_card-body back">
                                 <div class="card-wrapper shadow-sm rounded">
-                                    <h5 style="text-align: center;">Введіть дані для авторизації</h5>
+
+                                    <% if (messages.error) { %>
+                                        <h5 style="text-align: center; color: red"><%= messages.error %></h5>
+                                    <% } else { %>
+                                        <h5 style="text-align: center;">Введіть дані для авторизації</h5>
+                                        <% } %>
                                     <div class="input-group flex-nowrap">
                                         <input name="username" type="text" class="form-control m-1" placeholder="Логін"
                                                aria-label="Username" aria-describedby="addon-wrapping">
