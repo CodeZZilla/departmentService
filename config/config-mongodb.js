@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 // const MONGO_DB = 'dbTest';
 //const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
-mongoose.connect('mongodb+srv://kitbut:1907@cluster0.pntsm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://kitbut:1907@cluster0.pntsm.mongodb.net/timeTable', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log('connection to database established');
     }).catch(err => {
