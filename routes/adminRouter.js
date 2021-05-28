@@ -17,6 +17,7 @@ adminRouter.get('/', auth, adminController.getAll);
 
 
 
+
 // РОЗКЛАД
 
 adminRouter.get('/scheduleAdmin', auth, function (req, res) {
@@ -39,11 +40,13 @@ adminRouter.post('/scheduleAdmin/getData', function (req, res){
 });
 
 
-
-
 adminRouter.get('/logout', adminController.logOut);
 
-adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline)
+
+adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline);
+adminRouter.post('/deleteDiscipline',urlencodedParser, adminController.deleteDiscipline)
+adminRouter.get('/getAll2', adminController.getAll2);
+
 
 
 module.exports=adminRouter;
