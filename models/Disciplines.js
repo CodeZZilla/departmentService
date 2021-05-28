@@ -16,7 +16,26 @@ class Disciplines {
         });
     }
 
+    static getAllDisciplines(){
+        return new Promise((resolve => {
+            const queryPosts = 'SELECT * FROM disciplines';
+            connection.query(queryPosts,(error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
 
+    static deleteDisciplines(obj){
+        return new Promise((resolve => {
+            const queryPosts = 'delete from disciplines where id_discipline = ?';
+            const arr = obj.id_discipline;
+            connection.query(queryPosts,arr,(error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
 }
 
 module.exports = Disciplines;

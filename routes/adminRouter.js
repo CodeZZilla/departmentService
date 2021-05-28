@@ -14,6 +14,9 @@ const auth = (req, res, next) => {
 
 adminRouter.get('/', auth, adminController.getAll);
 adminRouter.get('/scheduleAdmin', adminController.getScheduleAdmin);
-adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline)
+adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline);
+adminRouter.post('/deleteDiscipline',urlencodedParser, adminController.deleteDiscipline)
+adminRouter.get('/getAll2', adminController.getAll2);
+
 
 module.exports=adminRouter;
