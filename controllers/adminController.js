@@ -1,3 +1,4 @@
+const Disciplines = require('../models/Disciplines');
 
 
 exports.getAll = function (req,res){
@@ -22,3 +23,10 @@ exports.logOut = function (req, res, next) {
        res.redirect('/');
     });
 };
+
+}
+
+exports.addDiscipline=function (req, res) {
+    // Disciplines.addDisciplines(req.body).then(r => )
+}
+
