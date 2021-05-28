@@ -62,7 +62,7 @@ footer {
           align-items: center;
 }
 .footer .submit-button .loading {
-  display: block;
+  display: none;
 }
 
 main {
