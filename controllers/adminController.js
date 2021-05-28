@@ -24,8 +24,6 @@ exports.logOut = function (req, res, next) {
     });
 };
 
-}
-
 exports.addDiscipline=function (req, res) {
     // Disciplines.addDisciplines(req.body).then(r => )
 }
