@@ -1,6 +1,10 @@
 'use strict'
 const express = require('express');
 const path = require("path");
+
+// config mongodb
+require('./config/config-mongodb');
+
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const passport = require('passport');
@@ -12,12 +16,13 @@ const app = express();
 const flash = require('express-flash');
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(flash());
+app.use(express.urlencoded({extended: true}));
 
 app.use(
     session({
         secret: 'Dswfdd2ds',
-        store: new FileStore(),
+
         cookie: {
             path: '/',
             httpOnly: true,
