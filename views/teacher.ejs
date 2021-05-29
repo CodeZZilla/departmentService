@@ -13,10 +13,14 @@
     <%- include('view-blocks/header') %>
     <main>
       <div class="container-fluid">
-        <section class="nav-teacher">
-            <h1>Вітаю, Редзюк Євгеній!</h1>
-            <hr>
+        <section class="nav-teacher" style="display: flex;">
+            <h2>Вітаю, Редзюк Євгеній!</h2>
+            <button type="button" class="btn btn-outline-primary ms-3" data-bs-toggle="modal"
+            data-bs-target="#editProfileModal">
+                Налаштування профілю
+            </button>
         </section>
+            <hr>
         <section class="groups-block">
           <table class="table">
             <thead>
@@ -45,6 +49,10 @@
       </div>
     </main>
     <%- include('view-blocks/footer') %>
+    <%- include('view-blocks/modals') %>
   </div>
 </body>
+<script>
+  document.querySelectorAll('.teach').forEach(x=>x.style.display="none");
+</script>
 </html>
