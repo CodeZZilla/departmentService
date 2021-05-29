@@ -7,58 +7,67 @@
                 <th>2 пара</th>
                 <th>3 пара</th>
                 <th>4 пара</th>
-                <th>5 пара</th>
+                <th style="display:none">5 пара</th>
             </tr>
         </thead>
         <tbody>
+        <% for (let i = 0; i < audiences.length; i++){ %>
             <tr>
-                <th>230</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
+                <th><%= audiences[i] %></th>
+                <td>
+                    <form id="form_<%= audiences[i] %>_1">
+                        <div class="schedule-block rounded shadow-sm">
+                            <div class="first">
+                                <p class="text-group"></p>
+                            </div>
+                            <div class="second">
+                                <p class="discipline"></p>
+                                <p class="teacher"></p>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form id="form_<%= audiences[i] %>_2">
+                        <div class="schedule-block rounded shadow-sm">
+                            <div class="first">
+                                <p class="text-group"></p>
+                            </div>
+                            <div class="second">
+                                <p class="discipline"></p>
+                                <p class="teacher"></p>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form id="form_<%= audiences[i] %>_3">
+                        <div class="schedule-block rounded shadow-sm">
+                            <div class="first">
+                                <p class="text-group"></p>
+                            </div>
+                            <div class="second">
+                                <p class="discipline"></p>
+                                <p class="teacher"></p>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form id="form_<%= audiences[i] %>_4">
+                        <div class="schedule-block rounded shadow-sm">
+                            <div class="first">
+                                <p class="text-group"></p>
+                            </div>
+                            <div class="second">
+                                <p class="discipline"></p>
+                                <p class="teacher"></p>
+                            </div>
+                        </div>
+                    </form>
+                </td>
             </tr>
-            <tr>
-                <th>226</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-            </tr>
-            <tr>
-                <th>225</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-            </tr>
-            <tr>
-                <th>224</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-            </tr>
-            <tr>
-                <th>223</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-            </tr>
-            <tr>
-                <th>219</th>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-                <td><%- include('scheduleBlock') %></td>
-            </tr>
+        <% } %>
         </tbody>
     </table>
 </div>
@@ -73,17 +82,34 @@
         let time = new Date(),
             hours = time.getHours(),
             minutes = time.getMinutes();
-        if(hours>=18){
-            pastLesson(...a);
-        }else if(hours>=16 ){
-            pastLesson(a[0], a[5], a[10], a[15], a[20], a[25], a[1], a[6], a[11], a[16], a[21], a[26], a[2], a[7], a[12], a[17], a[22], a[27], a[3], a[8], a[13], a[18], a[23], a[28]);
-        }else if(hours>=14 ){
-            pastLesson(a[0], a[5], a[10], a[15], a[20], a[25], a[1], a[6], a[11], a[16], a[21], a[26], a[2], a[7], a[12], a[17], a[22], a[27]);
-        }else if(hours>=12 ){
-            pastLesson(a[0], a[5], a[10], a[15], a[20], a[25], a[1], a[6], a[11], a[16], a[21], a[26]);
-        }else if(hours>=10 ){
-            pastLesson(a[0], a[5], a[10], a[15], a[20], a[25]);
-        }
+
+        $.get("/admin/scheduleAdmin/allAudiences", function (auds) {
+            $.each(auds, function (k, v) {
+                for (let j = 1; j <= 4; j++){
+
+                    let form = $('#form_' + v + '_' + j);
+                    form.children(".schedule-block").addClass("free");
+                    if(hours>=16 ){
+                        if(j===1){
+                            form.children('.schedule-block').addClass('gray');
+                        }
+                    }else if(hours>=14 ){
+                        if(j===2){
+                            form.children('.schedule-block').addClass('gray');
+                        }
+                    }else if(hours>=12 ){
+                        if(j===3){
+                            form.children('.schedule-block').addClass('gray');
+                        }
+                    }else if(hours>=10 ){
+                        if(j===4){
+                            form.children('.schedule-block').addClass('gray');
+                        }
+                    }
+
+                }
+            });
+        });
     }
     setInterval(controlLessons(), 300000);
 </script>

@@ -101,6 +101,11 @@ main{
     .l{
         background: $lec-sampo;
     }
+    .free{
+        align-items: center;
+        background: rgb(238,174,202);
+        background: radial-gradient(circle, rgb(233, 198, 213) 10%, rgb(187, 209, 235) 100%);
+    }
     .gray{
         filter: grayscale(100);
         -webkit-filter: grayscale(100);
@@ -109,8 +114,11 @@ main{
     // background-color: $pz;
     // margin: 40px;
     padding: 5px;
-    // width: 250px;
+    min-width: 250px;
+    width: 100%;
+    max-width: 400px;
     height: max-content;
+    min-height: 100px;
     display: flex;
     justify-content: space-around;
     p{
@@ -119,6 +127,7 @@ main{
     .text-group{
         font-weight: 900;
         font-size: 60px;
+        font-size: 5em;
         text-align: center;
         color: rgba(255, 255, 255, 0.815);
     }
@@ -129,6 +138,7 @@ main{
         font-weight: bold;
         font-size: 39px;
         line-height: 39px;
+        font-size: 2.5em;
         font-style: normal;
         text-align: center;
         color: #FFFFFF;
@@ -136,6 +146,7 @@ main{
     .teacher{
         font-weight: bold;
         font-size: 20px;
+        font-size: 1.5em;
         line-height: 20px;
         text-align: center;
         color: #FFFFFF;
