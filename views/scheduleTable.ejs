@@ -15,11 +15,12 @@
             <tr>
                 <th><%= audiences[i] %></th>
                 <td>
-                    <form id="form_<%= audiences[i] %>_1">
-                        <div class="schedule-block rounded shadow-sm">
+                    <form class="form" id="form_<%= audiences[i] %>_1">
+                        <div  class="schedule-block rounded shadow-sm">
                             <div class="first">
                                 <p class="text-group"></p>
                             </div>
+                            
                             <div class="second">
                                 <p class="discipline"></p>
                                 <p class="teacher"></p>
@@ -112,4 +113,6 @@
         });
     }
     setInterval(controlLessons(), 300000);
+
+
 </script>

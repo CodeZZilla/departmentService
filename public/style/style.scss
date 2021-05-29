@@ -127,12 +127,14 @@ main{
     // background-color: $pz;
     // margin: 40px;
     padding: 5px;
-    min-width: 250px;
+    min-width: 20em;
     width: 100%;
     max-width: 400px;
-    height: max-content;
-    min-height: 100px;
+    // height: inherit;
+    // height: 100%;
+    min-height: 130px;
     display: flex;
+    margin: auto;
     justify-content: space-around;
     p{
         margin: 0;
@@ -164,17 +166,34 @@ main{
         text-align: center;
         color: #FFFFFF;
     }
+    .form{
+        height: inherit;
+        align-self: center;
+    }
+    td{
+        justify-content: center;
+        display: flex;
+        // height: 100%;
+    }
 }
 .schedule-block-admin{
     background-color: $platinum-color;
     // margin: 40px;
-    width: 250px;
+    width: 20em;
     height: max-content;
     display: flex;
 }
 .schedule-table{
     tr{
         text-align: center;
+
+    }
+    .td{
+        height: 100%;
+        min-height: 100%;
+    }
+    form{
+        height: inherit;
     }
 }
     .schedule-title{
