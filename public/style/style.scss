@@ -16,8 +16,10 @@ body{
     width: max-content;
 }
 header{
+    min-height: 6em;
     width: 100%;
-    background-color: $first-blue-color;
+    // z-index: 14;
+    background-image: linear-gradient( 67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7% );
     display: flex;
     color: white;
     justify-content: space-between;
@@ -25,9 +27,8 @@ header{
     .header-account{
         display: flex;
         justify-content: space-between;
-        align-items: center;
         h6{
-            margin-right: 10px;
+            margin-right: 1em;
         }
     }
 }
@@ -62,18 +63,79 @@ footer{
     }
 }
 main{
+    padding: 20px 0;
     margin-top: 30px;
     padding-bottom: 130px; 
 }
 .hi-container{
-    width: 100%;
+    // width: 100%;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
+    padding:0 10px ;
+    // flex-direction: column;
+    min-height: 50vh;
+    justify-content: center;
     align-items: center;
-    margin: 50px 0;
+    padding: 50px 0;
+
+    .second{
+        height: 70%;
+    }
+
+    @mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird, $shadowColor)
+    {
+      border-radius: $radius;
+      background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
+      box-shadow: 0 20px 30px -6px $shadowColor;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+    }
+    
+
+    .button{
+        transition: all .3s ease-in-out;
+        &:nth-child(2){
+          @include createButton(150px, 60px, 50px,#E2B0FF,#9F44D3, rgba(171,88,219,0.5));
+        }
+        &:nth-child(1){
+          @include createButton(150px, 60px, 50px,#81FBB8,#28C76F, rgba(60,211,128,0.5));
+        }
+        &:nth-child(4){
+          @include createButton(150px, 60px, 50px,#ABDCFF,#0396FF, rgba(30,161,255,0.5));
+        }
+        &:nth-child(5){
+          @include createButton(150px, 60px, 50px,#FEB692,#EA5455, rgba(238,103,97,0.5));
+        }
+        &:hover{
+          transform:translatey(10px);
+          box-shadow: none;
+        }
+        &:active{
+          opacity: 0.5;
+        }
+    }
+    .btn-2{
+        transform: translateX(-110px);
+        background-image: linear-gradient( 135deg, #E2B0FF 0%, #9F44D3 100%) !important;
+   
+        &:hover{
+      transform: translateX(-110px) translateY(10px);
+      -webkit-transform: translateX(-110px) translateY(10px);
+      -moz-transform: translateX(-110px) translateY(10px);
+      -ms-transform: translateX(-110px) translateY(10px);
+      -o-transform: translateX(-110px) translateY(10px);
+
+}
+
+
+    }
+    
 }
 ._card-container{
-    margin: 30px;
+    // margin: 30px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -83,12 +145,17 @@ main{
         display: flex;
     }
     ._card-body{
-        max-width: 450px;
+        max-width: 350px;
         width: 100%;
+        margin: 30px;
     }
     .card-wrapper{
         border: 1px solid #eee;
         padding: 15px;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     ._card{
         position: relative;

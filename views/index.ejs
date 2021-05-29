@@ -10,51 +10,59 @@
     <title>DepartmentService</title>
 </head>
 <body>
-<%- include('header') %>
-<div class="wrapper" >
-    <main>
+<div class="wrapper"  >
+<%- include('view-blocks/header') %>
+    <main style="padding: 0 !important; margin: 0 !important;">
         <div class="hi">
             <div class="container-fluid">
                 <div class="hi-container">
-                    <h2>Вітаємо у сервісі автоматизації роботи кафедри ВВНЗ!</h2>
-                    <div class="_card-container">
-
-                        <form action="/logIn" method="post">
-                            <div class="_card-body back">
-                                <div class="card-wrapper shadow-sm rounded">
-
-                                    <% if (messages.error) { %>
-                                        <h5 style="text-align: center; color: red"><%= messages.error %></h5>
-                                    <% } else { %>
-                                        <h5 style="text-align: center;">Введіть дані для авторизації</h5>
-                                        <% } %>
-                                    <div class="input-group flex-nowrap">
-                                        <input name="username" type="text" class="form-control m-1" placeholder="Логін"
-                                               aria-label="Username" aria-describedby="addon-wrapping">
-                                    </div>
-                                    <div class="input-group flex-nowrap">
-                                        <input name="password" type="password" class="form-control m-1" placeholder="Пароль"
-                                               aria-label="Password" aria-describedby="addon-wrapping">
-                                    </div>
-                                    <div class="buttons">
-                                        <a type="button" href="/guest"
-                                           class="btn btn-outline-primary btn-lg m-1 flip-btn">Увійти як гість</a>
-                                        <input type="submit" class="btn btn-primary btn-lg m-1 flip-btn"
-                                               value="Авторизуватись">
-
+                    <div class="first" style="margin-right:5vw;">
+                        <div class="_card-container" style="padding: 3em;">
+                            <form action="/logIn" method="post">
+                                <div class="_card-body back">
+                                    <div class="card-wrapper shadow-sm rounded">
+    
+                                        <% if (messages.error) { %>
+                                            <h5 style="text-align: center; color: red"><%= messages.error %></h5>
+                                        <% } else { %>
+                                            <h5 style="text-align: center;">Авторизуйтесь</h5>
+                                            <% } %>
+                                        <div class="input-group flex-nowrap">
+                                            <input name="username" type="text" class="form-control m-1" placeholder="Логін"
+                                                   aria-label="Username" aria-describedby="addon-wrapping">
+                                        </div>
+                                        <div class="input-group flex-nowrap">
+                                            <input name="password" type="password" class="form-control m-1" placeholder="Пароль"
+                                                   aria-label="Password" aria-describedby="addon-wrapping">
+                                        </div>
+                                        <div class="buttons">
+                                            <a type="button" href="/guest" style="display: none;"
+                                               class="btn btn-outline-primary btn-lg m-1 flip-btn">Увійти як гість</a>
+                                            <input type="submit" class="btn button btn-lg m-1 flip-btn"
+                                                   value="Авторизуватись">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-
+                            </form>
+    
+                        </div>
+                    </div>
+                    <div class="second" style="
+                    display: flex; align-items: center; position: relative;">
+                        <div class="img" style="position: absolute;  margin-left: 0vw;">
+                            <img src="..\img\4894122.png" alt="" style="width: 100%;">
+                        </div>
+                        <a href="\guest" class="btn-lg button btn btn-2 " style="z-index: 2; margin-top: 5.5em;">
+                            Або увійти як гість та оглянути розклад <svg width="24" height="24" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
     </main>
+<%- include('view-blocks/footer') %>
 </div>
-<%- include('footer') %>
 <script>
     // const card = document.getElementById("card");
     // function onfront(){

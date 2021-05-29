@@ -16,8 +16,6 @@ const auth = (req, res, next) => {
 adminRouter.get('/', auth, adminController.getAll);
 
 
-
-
 // РОЗКЛАД
 
 adminRouter.get('/scheduleAdmin', auth, function (req, res) {
@@ -39,6 +37,8 @@ adminRouter.post('/scheduleAdmin/getData', function (req, res){
     lessonController.list(req, res);
 });
 
+adminRouter.get('/schedule', lessonController.getView);
+
 
 adminRouter.get('/logout', adminController.logOut);
 adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline);
@@ -49,5 +49,6 @@ adminRouter.post('/addGroup', adminController.addGroup)
 adminRouter.post('/deleteGroup', adminController.deleteGroup)
 
 adminRouter.get('/discipline/:id', adminController.getPageDiscipline);
+
 
 module.exports=adminRouter;
