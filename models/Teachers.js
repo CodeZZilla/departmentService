@@ -23,7 +23,7 @@ function translite(str)
 class Teachers{
     static getAllTeachers(){
         return new Promise((resolve) => {
-            const queryPosts = 'select * from lectures;';
+            const queryPosts = 'select * from teachers;';
             pool.query(queryPosts, (error, results) => {
                 if (error) throw error;
                 resolve(results);
@@ -45,7 +45,7 @@ class Teachers{
                 pool.query(queryPosts2, arr, (error, result)=>{
                     if (error) throw error;
                     console.log(result)
-                    const pass = [translite(obj.name), translite(obj.surname),'teacher', result[0].id_teacher];
+                    const pass = [translite(obj.name), translite(obj.surname),'TEACHER', result[0].id_teacher];
                     const queryPosts3 = 'INSERT INTO `users` (`username`,`password`,`role`,`teacher_id`) VALUES (?,?,?,?)';
                     pool.query(queryPosts3, pass, (error, r)=>{
                         if (error) throw error;
@@ -58,12 +58,21 @@ class Teachers{
 
     static deleteTeacher(obj){
         return new Promise((resolve => {
-            const queryPosts = 'delete from lectures where id_lecture = ?';
+            const queryPosts = 'delete from teachers where id_teacher= ?';
+            const queryPosts2 = 'delete from users where teacher_id= ?';
+            const queryPosts3 = 'delete from relations_cdl where teacher_id= ?';
             const arr = obj.teacherId;
-            pool.query(queryPosts,arr,(error, results) => {
+            pool.query(queryPosts3,arr,(error, results) => {
                 if (error) throw error;
-                resolve(results);
-            });
+                pool.query(queryPosts2,arr,(error, results) => {
+                    if (error) throw error;
+                    pool.query(queryPosts,arr,(error, results) => {
+                        if (error) throw error;
+                        resolve(results);
+                    });
+                });
+            })
+
         }));
     }
 

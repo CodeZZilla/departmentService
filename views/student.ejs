@@ -13,8 +13,12 @@
         <%- include('view-blocks/header') %>
         <main>
             <div class="container-fluid">
-              <section class="nav-teacher">
+              <section class="nav-teacher" style="display: flex;">
                   <h1>Вітаю, Вірста Анастасія!</h1>
+                  <button type="button" class="btn btn-outline-primary ms-3" data-bs-toggle="modal"
+                  data-bs-target="#editProfileModal">
+                      Налаштування профілю
+                  </button>
               </section>
                   <hr>
               <section class="groups-block">
@@ -45,10 +49,12 @@
             </div>
         </main>
         <%- include('view-blocks/footer') %>
+        <%- include('view-blocks/modals') %>
     </div>
 </body>
 
 <script>
     document.getElementById("header_title").innerHTML = "Ви увійшли як Ім'я - Фамілія";
+  document.querySelectorAll('.teach').forEach(x=>x.style.display="none");
 </script>
 </html>
