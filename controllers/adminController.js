@@ -39,14 +39,7 @@ exports.logOut = function (req, res, next) {
 
     res.clearCookie('keyboard cat' , {path:'/'});
 
-    req.session.destroy(function (err) {
-       if (err)
-           return next(err);
-
-       req.session = null;
-
-       res.redirect('/');
-    });
+    res.redirect('/');
 };
 
 

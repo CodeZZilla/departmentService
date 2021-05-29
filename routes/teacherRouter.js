@@ -4,14 +4,10 @@ const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const teacherRouter = express.Router();
 
-const auth = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        next();
-    } else {
-        return res.redirect('/');
-    }
-};
-teacherRouter.get('/', teacherController.getAll);
+const roleMiddleware = require('../middleware/roleMiddleware');
+
+
+teacherRouter.get('/', roleMiddleware(['TEACHER']), teacherController.getAll);
 
 
 

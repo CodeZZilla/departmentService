@@ -9,7 +9,7 @@ const roleMiddleware = require('../middleware/roleMiddleware');
 
 
 adminRouter.get('/', roleMiddleware(["ADMIN"]), adminController.getAll);
-
+adminRouter.get('/logout', adminController.logOut);
 
 
 // РОЗКЛАД
