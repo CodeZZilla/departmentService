@@ -35,6 +35,17 @@ class Cadets {
             });
         }));
     }
+
+    static getDisciplinesById(id){
+        return new Promise((resolve => {
+            const queryPosts = 'select * from disciplines where id_discipline = ?';
+            const arr = id
+            pool.query(queryPosts,arr,(error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
 }
 
 module.exports = Cadets;

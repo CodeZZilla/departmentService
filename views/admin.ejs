@@ -13,171 +13,202 @@
     <title>DepartmentService</title>
 </head>
 <body>
-    <div class="wrapper" style="min-height: 100vh; position: relative;">
+<div class="wrapper" style="min-height: 100vh; position: relative;">
     <%- include('header') %>
-        <main>
-            <section class="admin-panel">
-                <div class="container-fluid admin-panel-container">
-                      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link active" id="pills-disciplinesSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-disciplinesSettings" type="button" role="tab" aria-controls="pills-disciplinesSettings" aria-selected="true">Дисципліни</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="pills-groupSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-groupSettings" type="button" role="tab" aria-controls="pills-groupSettings" aria-selected="true">Групи</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="pills-teacherSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-teacherSettings" type="button" role="tab" aria-controls="pills-teacherSettings" aria-selected="true">Викладачі</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="pills-adminSettings-tab" data-bs-toggle="pill" data-bs-target="#pills-adminSettings" type="button" role="tab" aria-controls="pills-adminSettings" aria-selected="false">Налаштування аккаунта</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <a href="/admin/scheduleAdmin" class="nav-link" >Редагувати розклад занять</a>
-                          <!-- schedule admin route  -->
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <a href="/admin/schedule" class="nav-link" >Переглянути розклад занять</a>
-                          <!-- schedule route  -->
-                        </li>
-                      </ul>
-                      <hr>
-                      <div class="tab-content" id="pills-tabContent">
+    <main>
+        <section class="admin-panel">
+            <div class="container-fluid admin-panel-container">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-disciplinesSettings-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-disciplinesSettings" type="button" role="tab"
+                                aria-controls="pills-disciplinesSettings" aria-selected="true">Дисципліни
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-groupSettings-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-groupSettings" type="button" role="tab"
+                                aria-controls="pills-groupSettings" aria-selected="true">Групи
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-teacherSettings-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-teacherSettings" type="button" role="tab"
+                                aria-controls="pills-teacherSettings" aria-selected="true">Викладачі
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-adminSettings-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-adminSettings" type="button" role="tab"
+                                aria-controls="pills-adminSettings" aria-selected="false">Налаштування аккаунта
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="/admin/scheduleAdmin" class="nav-link">Редагувати розклад занять</a>
+                        <!-- schedule admin route  -->
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="/admin/schedule" class="nav-link">Переглянути розклад занять</a>
+                        <!-- schedule route  -->
+                    </li>
+                </ul>
+                <hr>
+                <div class="tab-content" id="pills-tabContent">
 
 
-
-
-                        <div class="tab-pane fade show active" id="pills-disciplinesSettings" role="tabpanel" aria-labelledby="pills-disciplinesSettings-tab">
-                            <div class="disciplineSettings" style="position: relative;">
-                              <div class="disciplineSettings-header mb-2" style="display: flex;">
+                    <div class="tab-pane fade show active" id="pills-disciplinesSettings" role="tabpanel"
+                         aria-labelledby="pills-disciplinesSettings-tab">
+                        <div class="disciplineSettings" style="position: relative;">
+                            <div class="disciplineSettings-header mb-2" style="display: flex;">
                                 <h2>Налаштування дисциплін</h2>
-                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addDisciplineModal">
-                                  Додати нову дисципліни</button>
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal"
+                                        data-bs-target="#addDisciplineModal">
+                                    Додати нову дисципліни
+                                </button>
                             </div>
-                              </div>
-                                <div id="disciplineDiv">
-                                    <% for(let i=0; i<allDiscipline.length;i++){%>
-
-                                      <table class="table table-stripted">
-                                        <tbody>
-                                          <tr>
-                                            <!-- <th></th> -->
-                                            <td><%= allDiscipline[i].name_discipline%></td>
-                                            <td style="width: 30px;">
-                                              <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm"  >
-                                                <!-- route edit group  -->
-                                                  Змінити</button></td>
-                                                  <!-- НАДО ДОБАВИТЬ РОУТИ  -->
-                                            <td style="width: 30px;"><a href="#" class="trash-icon">
-                                                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                                  <path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
-                                            </a></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-
-
-                                        
-                                    <%}%>
-                                </div>
                         </div>
 
+                        <table class="table table-stripted">
+                            <tbody id="disciplineDiv">
+                            <% for(let i = 0; i < allDiscipline.length;i++){ %>
+                                <tr>
+                                    <!-- <th></th> -->
+                                    <td><%= allDiscipline[i].name_discipline %></td>
+                                    <td style="width: 30px;">
+                                        <a href="/admin/discipline/<%= allDiscipline[i].id_discipline %>" type="button" class="btn btn-outline-success btn-sm">
+                                            <!-- route edit group  -->
+                                            Змінити
+                                        </a>
+                                    </td>
+                                    <!-- НАДО ДОБАВИТЬ РОУТИ  -->
+                                    <td style="width: 30px;">
+                                        <a onclick="deleteDiscipline(this.id)" id="<%= allDiscipline[i].id_discipline %>" href="#" class="trash-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24">
+                                                <path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/>
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                            </tbody>
+                        </table>
+
+                    </div>
 
 
-
-                        <div class="tab-pane fade" id="pills-groupSettings" role="tabpanel" aria-labelledby="pills-groupSettings-tab">
-                            <div class="groupSettings">
-                              <div class="groupsettings-header" style="display: flex;">
+                    <div class="tab-pane fade" id="pills-groupSettings" role="tabpanel"
+                         aria-labelledby="pills-groupSettings-tab">
+                        <div class="groupSettings">
+                            <div class="groupsettings-header" style="display: flex;">
                                 <h2>Налаштування груп</h2>
-                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addGroupModal">Додати нову групу</button>
-                              </div>
-                              <hr>
-                              <table class="table table-stripted">
-                                <tbody>
-                                <% for (let i=0; i< allGroups.length;i++){%>
-                                    <tr>
-                                        <th scope="row" style="width: 30px;"><%=i+1%></th>
-                                        <td><%= allGroups[i].number_group %></td>
-                                        <td style="width: 30px;">
-                                            <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm"  >
-                                                <!-- route edit group  -->
-                                                Змінити</button></td>
-                                        <td style="width: 30px;">
-                                            <a onclick="deleteGroup(this.id)" id="<%= allGroups[i].id_group%>" href="#" class="trash-icon">
-                                                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <%}%>
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal"
+                                        data-bs-target="#addGroupModal">Додати нову групу
+                                </button>
+                            </div>
+                            <hr>
+                            <table class="table table-stripted">
+                                <tbody id="groupsDiv">
+                                <% for (let i = 0; i < allGroups.length;i++){ %>
+                                <tr>
+                                    <th scope="row" style="width: 30px;"><%= i+1 %></th>
+                                    <td><%= allGroups[i].number_group %></td>
+                                    <td style="width: 30px;">
+                                        <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm">
+                                            <!-- route edit group  -->
+                                            Змінити
+                                        </button>
+                                    </td>
+                                    <td style="width: 30px;">
+                                        <a onclick="deleteGroup(this.id)" id="<%= allGroups[i].id_group %>" href="#"
+                                           class="trash-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24">
+                                                <path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/>
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <% } %>
 
                                 </tbody>
-                              </table>
-                            </div>
+                            </table>
                         </div>
+                    </div>
 
 
-
-                        <div class="tab-pane fade" id="pills-teacherSettings" role="tabpanel" aria-labelledby="pills-teacherSettings-tab">
-                            <div class="teacherSettings">
-                              <div class="teacherSettings-header" style="display: flex;">
+                    <div class="tab-pane fade" id="pills-teacherSettings" role="tabpanel"
+                         aria-labelledby="pills-teacherSettings-tab">
+                        <div class="teacherSettings">
+                            <div class="teacherSettings-header" style="display: flex;">
                                 <h2>Налаштування викладачів</h2>
-                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addTeacherModal">Додати нового викладача</button>
-                              </div>
-                              <hr>
-                              <table class="table table-stripted">
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal"
+                                        data-bs-target="#addTeacherModal">Додати нового викладача
+                                </button>
+                            </div>
+                            <hr>
+                            <table class="table table-stripted">
                                 <tbody>
-                                  <tr>
+                                <tr>
                                     <th scope="row" style="width: 30px;">1</th>
                                     <td>Євгеній Редзюк</td>
                                     <td style="width: 30px;">
-                                      <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm"  >
-                                        <!-- route edit group  -->
-                                          Змінити</button></td>
-                                    <td style="width: 30px;"><a href="#" class="trash-icon">
-                                        <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
-                                    </a></td>
-                                  </tr>
+                                        <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm">
+                                            <!-- route edit group  -->
+                                            Змінити
+                                        </button>
+                                    </td>
+                                    <td style="width: 30px;">
+                                        <a href="#" class="trash-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24">
+                                                <path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/>
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
                                 </tbody>
-                              </table>
-                            </div>
+                            </table>
                         </div>
+                    </div>
 
 
-
-
-                        <div class="tab-pane fade" id="pills-adminSettings" role="tabpanel" aria-labelledby="pills-adminSettings-tab">
-                          <div class="adminsettings">
+                    <div class="tab-pane fade" id="pills-adminSettings" role="tabpanel"
+                         aria-labelledby="pills-adminSettings-tab">
+                        <div class="adminsettings">
                             <div class="adminsettings-header" style="display: flex;">
-                              <h2>Особистий кабінет адміністратора</h2>
+                                <h2>Особистий кабінет адміністратора</h2>
                             </div>
-                              <div class="adminSettings">
+                            <div class="adminSettings">
                                 <div class="mb-3">
-                                  <label for="changelogin" class="form-label">Змінити логін</label>
-                                  <input type="email" class="form-control" id="changelogin" placeholder="">
+                                    <label for="changelogin" class="form-label">Змінити логін</label>
+                                    <input type="email" class="form-control" id="changelogin" placeholder="">
                                 </div>
-                              </div>
-                              <div class="mb-3">
+                            </div>
+                            <div class="mb-3">
                                 <label for="changepassword" class="form-label">Змінити пароль</label>
                                 <input type="email" class="form-control" id="changepassword" placeholder="">
-                              </div>
-                              <button type="button" class="btn btn-primary">Зберегти зміни</button>  
-                          `</div>
-                          </div>
+                            </div>
+                            <button type="button" class="btn btn-primary">Зберегти зміни</button>
+                            `
+                        </div>
                     </div>
                 </div>
+            </div>
 
-            </section>
-        </main>
-    
+        </section>
+    </main>
+
     <%- include('footer') %>
 </div>
 
 <%- include('modals') %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="script/script-admin.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="script/script-admin.js"></script>
 </body>
 </html>
 <script>
-    document.getElementById("header_title").innerHTML = "Ви увійшли як адміністратор";
-    
+    //document.getElementById("header_title").innerHTML = "Ви увійшли як адміністратор";
+
 </script>
