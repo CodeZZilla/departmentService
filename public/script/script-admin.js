@@ -168,7 +168,7 @@ function deleteGroup(obj) {
 }
 
 function addTeacher() {
-    console.log('dfsdsfsdfsd')
+    console.log('qwerty')
 
     $.ajax({
         url: 'admin/addTeacher',           /* Куда пойдет запрос */
@@ -178,6 +178,37 @@ function addTeacher() {
             name:document.getElementById('name').value,
             surname:document.getElementById('surname').value
         },          /* Параметры передаваемые в запросе. */
+
+    });
+
+}
+
+function deleteTeacher(obj) {
+    console.log('dfsdsfsdfsd')
+    $.ajax({
+        url: 'admin/deleteTeacher',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            teacherId: obj
+        },          /* Параметры передаваемые в запросе. */
+
+    });
+
+}
+
+function addRelation() {
+    console.log('fffffff')
+
+    $.ajax({
+        url: '/admin/discipline/addRelation',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            groupId: document.getElementById('select-group').value,
+            disciplineId:document.getElementById('select-discipline').value,
+            teacherId:document.getElementById('select-teacher').value
+        }          /* Параметры передаваемые в запросе. */
 
     });
 
