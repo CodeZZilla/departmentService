@@ -2,6 +2,7 @@
 
 const request = new XMLHttpRequest();
 
+document.querySelectorAll('.adm').forEach(x=>x.style.display ='none');
 function addDiscipline() {
     $.post("/admin/addDiscipline", {
         discipline: document.getElementById('discipline').value,

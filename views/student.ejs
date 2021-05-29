@@ -12,7 +12,37 @@
     <div class="wrapper">
         <%- include('view-blocks/header') %>
         <main>
-            
+            <div class="container-fluid">
+              <section class="nav-teacher">
+                  <h1>Вітаю, Вірста Анастасія!</h1>
+              </section>
+                  <hr>
+              <section class="groups-block">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 30px;" scope="col">#</th>
+                      <th scope="col">Дисципліна</th>
+                      <th scope="col">Група</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>ООП</td>
+                      <td>281</td>
+                      <td style="width: 170px">
+                        <a href="" type="button" class="btn btn-outline-success btn-sm">
+                            <!-- route edit group  -->
+                            Журнал оцінювання
+                        </a>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
         </main>
         <%- include('view-blocks/footer') %>
     </div>

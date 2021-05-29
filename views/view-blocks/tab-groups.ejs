@@ -13,10 +13,10 @@
             <th scope="row" style="width: 30px;"><%= i+1 %></th>
             <td><%= allGroups[i].number_group %></td>
             <td style="width: 30px;">
-                <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm">
+                <a href="/editGroup" type="button" class="btn btn-outline-success btn-sm">
                     <!-- route edit group  -->
                     Змінити
-                </button>
+                </a>
             </td>
             <td style="width: 30px;">
                 <a onclick="deleteGroup(this.id)" id="<%= allGroups[i].id_group %>" href="#"
@@ -29,7 +29,6 @@
             </td>
         </tr>
         <% } %>
-
         </tbody>
     </table>
 </div>
