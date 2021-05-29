@@ -35,7 +35,13 @@ class authController {
                 // res.json({token});
                 module.exports.tok = token;
 
-                return res.redirect('/admin');
+                if (user[0].role === 'ADMIN')
+                    return res.redirect('/admin');
+                else if (user[0].role === 'CADET')
+                    return res.redirect('/student');
+                else if (user[0].role === 'TEACHER')
+                    return res.redirect('/teacher');
+                return res.redirect('/');
             });
 
 
