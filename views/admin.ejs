@@ -45,7 +45,16 @@
                       <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-disciplinesSettings" role="tabpanel" aria-labelledby="pills-disciplinesSettings-tab">
                             <div class="teacherSettings" style="position: relative;">
+                              <div class="teacherSettings-header mb-2" style="display: flex;">
                                 <h2>Налаштування дисциплін</h2>
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addDisciplineModal">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                                  Додати нову дисципліни</button>
+                              <button type="button" class="btn btn-success ms-3" data-bs-toggle="modal" data-bs-target="#addConnectModal" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                                  Додати новий зв'язок</button>
+                            </div>
+                              </div>
                                 <div id="disciplineDiv">
                                     <% for(let i=0; i<allDiscipline.length;i++){%>
                                         <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -91,15 +100,6 @@
                                         </div>
                                     <%}%>
                                 </div>
-                                  <div class="static-btns" style="position: fixed; bottom: 14%; right: 5%; display: flex;">
-                                    <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#addDisciplineModal">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
-                                        Додати нову дисципліни</button>
-                                    <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#addConnectModal" >
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
-                                        Додати новий зв'язок</button>
-                                  </div>
-                            </div>
                         </div>
                         <div class="tab-pane fade" id="pills-groupSettings" role="tabpanel" aria-labelledby="pills-groupSettings-tab">
                             <div class="groupSettings">
@@ -134,7 +134,7 @@
                             <div class="teacherSettings">
                               <div class="teacherSettings-header" style="display: flex;">
                                 <h2>Налаштування викладачів</h2>
-                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addGroupModal">Додати нового викладача</button>
+                                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addTeacherModal">Додати нового викладача</button>
                               </div>
                               <hr>
                               <table class="table table-stripted">
@@ -261,6 +261,33 @@
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="group" placeholder="name@example.com">
                 <label for="floatingInput">Номер групи</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+            <button onclick="addGroup()"  type="button" class="btn btn-primary">Зберегти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" tabindex="-1" id="addTeacherModal" aria-labelledby="addTeacherModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Додати нового викладача</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="group" placeholder="name@example.com">
+                <label for="floatingInput">Ім'я</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="group" placeholder="name@example.com">
+                <label for="floatingInput">Призвіще</label>
               </div>
             </form>
           </div>
