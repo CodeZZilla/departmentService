@@ -6,7 +6,15 @@ $second-blue-color: #004E98;
 $pz: linear-gradient(254.74deg, #5a8b19 0.36%, #89a366 93.63%);
 $gz: linear-gradient(254.74deg, #FF4D00 0.36%, #DEB54D 93.63%);
 $lec-sampo: linear-gradient(254.74deg, #FF0000 0.36%, #7B6FFF 93.63%);
-
+html{
+    height: -webkit-fill-available;
+}
+body{
+    min-height: 100vh;
+    position: relative;
+    min-width: 100vw;
+    width: max-content;
+}
 header{
     width: 100%;
     background-color: $first-blue-color;
@@ -26,6 +34,10 @@ header{
 footer{
     width: 100%;
     background-color: $silver-color;
+    position: absolute;
+    bottom: 0;
+    // width: 100%;
+    // margin-top: 100px;
 }
 .footer{
     // height: 80px;
@@ -50,7 +62,8 @@ footer{
     }
 }
 main{
-    margin: 30px 0;
+    margin-top: 30px;
+    padding-bottom: 100px; 
 }
 .hi-container{
     width: 100%;
