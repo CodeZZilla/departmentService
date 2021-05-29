@@ -47,6 +47,8 @@ adminRouter.get('/getAll2', adminController.getAll2);
 adminRouter.get('/getAllGroups', adminController.getAllGroups);
 adminRouter.post('/addGroup', adminController.addGroup)
 adminRouter.post('/deleteGroup', adminController.deleteGroup)
+adminRouter.post('/addTeacher', adminController.addTeacher)
+
 
 adminRouter.get('/discipline/:id', adminController.getPageDiscipline);
 

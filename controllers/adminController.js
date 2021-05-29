@@ -1,5 +1,6 @@
 const Disciplines = require('../models/Disciplines');
 const Groups = require('../models/Groups');
+const Teachers= require('../models/Teachers')
 
 
 exports.getAll = function (req, res) {
@@ -61,6 +62,12 @@ exports.deleteDiscipline = async function (req, res) {
     await Disciplines.deleteDisciplines(req.body);
     res.send('ok!');
 }
+ exports.addTeacher =  function (req, res) {
+     console.log(req.body)
+     Teachers.addTeacher(req.body).then(() =>
+         res.send('OK!')
+     )
+ };
 
 exports.addGroup = async function (req, res) {
     await Groups.addGroup(req.body);
