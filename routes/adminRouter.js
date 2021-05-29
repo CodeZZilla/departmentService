@@ -44,7 +44,10 @@ adminRouter.get('/logout', adminController.logOut);
 adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline);
 adminRouter.post('/deleteDiscipline',urlencodedParser, adminController.deleteDiscipline)
 adminRouter.get('/getAll2', adminController.getAll2);
+adminRouter.get('/getAllGroups', adminController.getAllGroups);
 adminRouter.post('/addGroup', adminController.addGroup)
 adminRouter.post('/deleteGroup', adminController.deleteGroup)
+
+adminRouter.get('/discipline/:id', adminController.getPageDiscipline);
 
 module.exports=adminRouter;

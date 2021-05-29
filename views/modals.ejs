@@ -20,7 +20,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
-              <button onclick="addDiscipline()" type="button" class="btn btn-primary">Зберегти</button>
+              <button onclick="addDiscipline()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Зберегти</button>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
-              <button onclick="addGroup()"  type="button" class="btn btn-primary">Зберегти</button>
+              <button onclick="addGroup()"  type="button" data-bs-dismiss="modal" class="btn btn-primary">Зберегти</button>
             </div>
           </div>
         </div>
@@ -101,11 +101,11 @@
             <div class="modal-body">
               <form action="">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="group" placeholder="name@example.com">
+                  <input type="text" class="form-control" id="name" placeholder="name@example.com">
                   <label for="floatingInput">Ім'я</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="group" placeholder="name@example.com">
+                  <input type="text" class="form-control" id="surname" placeholder="name@example.com">
                   <label for="floatingInput">Призвіще</label>
                 </div>
               </form>
