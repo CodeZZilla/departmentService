@@ -1,13 +1,15 @@
+
+
 const mysql = require('mysql2');
 const config = require('../config/config_mysql.js');
 
 const pool = mysql.createPool(config);
 
-class Cadets {
-    static addCadets(obj) {
+class Disciplines {
+    static addDisciplines(obj) {
         return new Promise((resolve) => {
-            const queryPosts = 'INSERT INTO `cadets` (`name`,`surname`,`group_id`) VALUES (?,?,?)';
-            const arr = [obj.name, obj.surname,]
+            const queryPosts = 'INSERT INTO `disciplines` (`name_discipline`,`abbreviation`) VALUES (?,?)';
+            const arr = [obj.discipline, obj.abbreviation]
             pool.query(queryPosts, arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
@@ -15,9 +17,9 @@ class Cadets {
         });
     }
 
-    static getAllCadets(){
+    static getAllDisciplines(){
         return new Promise((resolve => {
-            const queryPosts = 'SELECT * FROM cadets';
+            const queryPosts = 'SELECT * FROM disciplines';
             pool.query(queryPosts,(error, results) => {
                 if (error) throw error;
                 resolve(results);
@@ -25,21 +27,10 @@ class Cadets {
         }));
     }
 
-    static deleteCadets(obj){
+    static deleteDisciplines(obj){
         return new Promise((resolve => {
-            const queryPosts = 'delete from cadets where id_cadet = ?';
-            const arr = obj.id_cadet;
-            pool.query(queryPosts,arr,(error, results) => {
-                if (error) throw error;
-                resolve(results);
-            });
-        }));
-    }
-
-    static getDisciplinesById(id){
-        return new Promise((resolve => {
-            const queryPosts = 'select * from disciplines where id_discipline = ?';
-            const arr = id
+            const queryPosts = 'delete from disciplines where id_discipline = ?';
+            const arr = obj.id_discipline;
             pool.query(queryPosts,arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
@@ -48,4 +39,4 @@ class Cadets {
     }
 }
 
-module.exports = Cadets;
+module.exports = Disciplines;
