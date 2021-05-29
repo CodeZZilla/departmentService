@@ -24,17 +24,17 @@
                                 <div class="card-wrapper shadow-sm rounded">
 
                                     <% if (messages.error) { %>
-                                        <h5 style="text-align: center; color: red"><%= messages.error %></h5>
+                                        <h5 style="text-align: center; color: red"><%= message %></h5>
                                     <% } else { %>
                                         <h5 style="text-align: center;">Введіть дані для авторизації</h5>
                                         <% } %>
                                     <div class="input-group flex-nowrap">
                                         <input name="username" type="text" class="form-control m-1" placeholder="Логін"
-                                               aria-label="Username" aria-describedby="addon-wrapping">
+                                               aria-label="Username" aria-describedby="addon-wrapping" required>
                                     </div>
                                     <div class="input-group flex-nowrap">
                                         <input name="password" type="password" class="form-control m-1" placeholder="Пароль"
-                                               aria-label="Password" aria-describedby="addon-wrapping">
+                                               aria-label="Password" aria-describedby="addon-wrapping" required>
                                     </div>
                                     <div class="buttons">
                                         <a type="button" href="/guest"
