@@ -101,6 +101,11 @@ main{
     .l{
         background: $lec-sampo;
     }
+    .free{
+        align-items: center;
+        background: rgb(238,174,202);
+        background: radial-gradient(circle, rgb(233, 198, 213) 10%, rgb(187, 209, 235) 100%);
+    }
     .gray{
         filter: grayscale(100);
         -webkit-filter: grayscale(100);
@@ -109,8 +114,10 @@ main{
     // background-color: $pz;
     // margin: 40px;
     padding: 5px;
-    // width: 250px;
+    min-width: 250px;
+    width: 100%;
     height: max-content;
+    min-height: 100px;
     display: flex;
     justify-content: space-around;
     p{
