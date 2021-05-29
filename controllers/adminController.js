@@ -1,5 +1,6 @@
 const Disciplines = require('../models/Disciplines');
 const Groups = require('../models/Groups');
+const Teachers= require('../models/Teachers')
 
 
 exports.getAll = function (req, res) {
@@ -20,6 +21,12 @@ exports.getAll2 = function all(req, res) {
         console.log(allDiscipline)
         res.send(allDiscipline);
    });
+}
+
+exports.getAllGroups = function all(req, res) {
+    Groups.getAllGroups().then((allGroups) => {
+        res.send(allGroups);
+    });
 }
 
 
@@ -55,15 +62,30 @@ exports.deleteDiscipline = async function (req, res) {
     await Disciplines.deleteDisciplines(req.body);
     res.send('ok!');
 }
-
-exports.addGroup = function (req, res) {
+ exports.addTeacher =  function (req, res) {
      console.log(req.body)
-    Groups.addGroup(req.body).then(() =>
-        res.send('OK!')
-    )
+     Teachers.addTeacher(req.body).then(() =>
+         res.send('OK!')
+     )
+ };
+
+exports.addGroup = async function (req, res) {
+    await Groups.addGroup(req.body);
+    res.send('OK!')
 };
 
 exports.deleteGroup = async function (req, res) {
     await Groups.deleteGroup(req.body);
-    res.send('ok!');
+    res.send('OK!')
+}
+
+
+exports.getPageDiscipline = function (req, res) {
+    Disciplines.getDisciplinesById(req.params.id).then((discipline) => {
+        console.log(discipline);
+        res.render('editDiscipline', {
+            discipline: discipline
+        });
+    });
+
 }

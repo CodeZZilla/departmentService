@@ -9,7 +9,7 @@
     <title>DepartmentService</title>
 </head>
 <body>
-    <%- include('header') %>
+    <%- include('view-blocks/header') %>
     <div class="wrapper">
         <main class="schedule">
             <section class="schedule-title container-fluid">
@@ -22,12 +22,12 @@
             </section>
             <div class="schedule container-fluid">
                 <div class="schedule-container">
-                    <%- include('scheduleTable.ejs') %>
+                    <%- include('view-blocks/scheduleTable.ejs') %>
                 </div>
             </div>
         </main>
     </div>
-    <%- include('footer') %>
+    <%- include('view-blocks/footer') %>
 
 </body>
 <script>

@@ -1,0 +1,175 @@
+
+    <div class="modal fade" tabindex="-1" id="addDisciplineModal" aria-labelledby="addDisciplineModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати нову дисципліну</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="discipline" placeholder="name@example.com">
+                  <label for="floatingInput">Повна назва дисципліна</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input id="abbreviation" type="text" class="form-control"  placeholder="name@example.com">
+                  <label for="floatingInput">Скорочена назва дисципліни</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button onclick="addDiscipline()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade" tabindex="-1" id="addConnectModal" aria-labelledby="addConnectModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати новий зв'язок</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <select class="form-select" aria-label="Floating label select example">
+                        <option selected>281</option>
+                        <option value="1">282</option>
+                        <option value="2">283</option>
+                    </select>
+                    <label for="floatingSelect">Номер групи</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select" aria-label="Floating label select example">
+                        <option selected>ООП</option>
+                        <option value="1">АП</option>
+                        <option value="2">КПП</option>
+                    </select>
+                    <label for="floatingSelect">Назва дисципліни</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select" aria-label="Floating label select example">
+                        <option selected>Редзюк</option>
+                        <option value="1">Власенко</option>
+                        <option value="2">Фесьоха</option>
+                    </select>
+                    <label for="floatingSelect">Викладач</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+      <div class="modal fade" tabindex="-1" id="addGroupModal" aria-labelledby="addGroupModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати нову групу</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="group" placeholder="name@example.com">
+                  <label for="floatingInput">Номер групи</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button onclick="addGroup()"  type="button" data-bs-dismiss="modal" class="btn btn-primary">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" tabindex="-1" id="addTeacherModal" aria-labelledby="addTeacherModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати нового викладача</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="name@example.com">
+                  <label for="floatingInput">Ім'я</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="surname" placeholder="name@example.com">
+                  <label for="floatingInput">Призвіще</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button onclick="addTeacher()"  type="button" class="btn btn-primary" data-bs-dismiss="modal">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="modal fade" tabindex="-1" id="editTeacherModal" aria-labelledby="editTeacherModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Редагувати викладача</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="name@example.com" value='value'>
+                  <label for="floatingInput">Ім'я</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="surname" placeholder="name@example.com" value='value'>
+                  <label for="floatingInput">Призвіще</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button onclick="addGroup()"  type="button" class="btn btn-primary" data-bs-dismiss="modal">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" tabindex="-1" id="addStudentModal" aria-labelledby="addStudentModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати нового студента</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="name@example.com">
+                  <label for="floatingInput">Ім'я</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="surname" placeholder="name@example.com">
+                  <label for="floatingInput">Призвіще</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button  type="button" class="btn btn-primary" >Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>

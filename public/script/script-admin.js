@@ -2,27 +2,48 @@
 
 const request = new XMLHttpRequest();
 
+document.querySelectorAll('.adm').forEach(x=>x.style.display ='none');
 function addDiscipline() {
-    console.log(document.getElementById('discipline').value)
-
-    // let value = JSON.stringify({discipline:document.getElementById('discipline').value, abbreviation:document.getElementById('abbreviation').value });
-    // request.open('POST', 'admin/addDiscipline', true);
-    // request.setRequestHeader("Content-Type", "application/json");
-    // request.addEventListener('load', ()=>{console.log(request.response)} );
-    // request.send(value);
-    $.ajax({
-        url: 'admin/addDiscipline',           /* Куда пойдет запрос */
-        method: 'post',             /* Метод передачи (post или get) */
-        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
-        data: {
-            discipline: document.getElementById('discipline').value,
-            abbreviation: document.getElementById('abbreviation').value
-        },          /* Параметры передаваемые в запросе. */
-        success: function (info) {
-            console.log(info)/* функция которая будет выполнена после успешного запроса.  */
-            $('#qwer').text(info);
-        }
-    });
+    $.post("/admin/addDiscipline", {
+        discipline: document.getElementById('discipline').value,
+        abbreviation: document.getElementById('abbreviation').value
+    }).done(function (data) {
+            console.log(data);
+            $.ajax({
+                url: '/admin/getAll2',           /* Куда пойдет запрос */
+                method: 'get',                  /* Метод передачи (post или get) */
+                dataType: 'json',               /* Тип данных в ответе (xml, json, script, html). */
+                success: function (data) {
+                    $('#disciplineDiv').empty();
+                    $.each(data, function (key, value){
+                        let str = "<tr>\n" +
+                            "                                    <!-- <th></th> -->\n" +
+                            "                                    <td>"+ value.name_discipline + "</td>\n" +
+                            "                                    <td style=\"width: 30px;\">\n" +
+                            "                                        <a href=\"/admin/discipline/"+ value.id_discipline + "\" type=\"button\" class=\"btn btn-outline-success btn-sm\">\n" +
+                            "                                            <!-- route edit group  -->\n" +
+                            "                                            Змінити\n" +
+                            "                                        </a>\n" +
+                            "                                    </td>\n" +
+                            "                                    <!-- НАДО ДОБАВИТЬ РОУТИ  -->\n" +
+                            "                                    <td style=\"width: 30px;\">\n" +
+                            "                                        <a onclick=\"deleteDiscipline(this.id)\" id='"+ value.id_discipline +"' href=\"#\" class=\"trash-icon\">\n" +
+                            "                                            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\"\n" +
+                            "                                                 viewBox=\"0 0 24 24\">\n" +
+                            "                                                <path d=\"M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z\"/>\n" +
+                            "                                            </svg>\n" +
+                            "                                        </a>\n" +
+                            "                                    </td>\n" +
+                            "                                </tr>";
+                        $('#disciplineDiv').append(str);
+                        console.log(value);
+                    });
+                }
+            });
+        })
+        .fail(function () {
+            alert("error");
+        });
 }
 
 function deleteDiscipline(obj) {
@@ -141,6 +162,22 @@ function deleteGroup(obj) {
         dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
         data: {
             groupId: obj
+        },          /* Параметры передаваемые в запросе. */
+
+    });
+
+}
+
+function addTeacher() {
+    console.log('dfsdsfsdfsd')
+
+    $.ajax({
+        url: 'admin/addTeacher',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            name:document.getElementById('name').value,
+            surname:document.getElementById('surname').value
         },          /* Параметры передаваемые в запросе. */
 
     });

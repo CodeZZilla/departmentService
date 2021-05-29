@@ -9,58 +9,42 @@
     <title>DepartmentService</title>
 </head>
 <body>
-    <%- include('header') %>
+  <div class="wrapper">
+    <%- include('view-blocks/header') %>
     <main>
+      <div class="container-fluid">
         <section class="nav-teacher">
-            <h1>Вітаю, ім'я \ призвіще</h1>
+            <h1>Вітаю, Редзюк Євгеній!</h1>
             <hr>
         </section>
         <section class="groups-block">
-            <button type="button" class="btn btn-primary">Додати нового студента</button>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="281-tab" data-bs-toggle="tab" data-bs-target="#281" type="button" role="tab" aria-controls="281" aria-selected="true">281</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="282-tab" data-bs-toggle="tab" data-bs-target="#282" type="button" role="tab" aria-controls="282" aria-selected="false">282</button>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="281" role="tabpanel" aria-labelledby="281-tab">
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Призвіще</th>
-                            <th scope="col">Ім'я</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Вірста</td>
-                            <td>Анастасія</td>
-                            <td style="width: 30px;">
-                                <a href="#" class="trash-icon m-2">
-                                    <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
-                                </a></td>
-                            <td>
-                                <button href="/editGroup" type="button" class="btn btn-outline-success btn-sm"  >
-                                  <!-- route edit group  -->
-                                    Змінити</button>
-                                </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-                <div class="tab-pane fade" id="282" role="tabpanel" aria-labelledby="282-tab">
-                    
-                </div>
-              </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width: 30px;" scope="col">#</th>
+                <th scope="col">Дисципліна</th>
+                <th scope="col">Група</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>ООП</td>
+                <td>281</td>
+                <td style="width: 170px">
+                  <a href="" type="button" class="btn btn-outline-success btn-sm">
+                      <!-- route edit group  -->
+                      Журнал оцінювання
+                  </a>
+              </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
+      </div>
     </main>
-    <%- include('footer') %>
+    <%- include('view-blocks/footer') %>
+  </div>
 </body>
 </html>

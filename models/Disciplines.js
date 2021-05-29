@@ -1,3 +1,5 @@
+
+
 const mysql = require('mysql2');
 const config = require('../config/config_mysql.js');
 
@@ -29,6 +31,16 @@ class Disciplines {
         return new Promise((resolve => {
             const queryPosts = 'delete from disciplines where id_discipline = ?';
             const arr = obj.id_discipline;
+            pool.query(queryPosts,arr,(error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
+    static getDisciplinesById(id){
+        return new Promise((resolve => {
+            const queryPosts = 'select * from disciplines where id_discipline = ?';
+            const arr = id
             pool.query(queryPosts,arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
