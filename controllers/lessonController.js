@@ -22,7 +22,7 @@ exports.saveAndUpdateAll = async function (req, res) {
             await el.save();
         }
     }
-};
+}
 
 exports.list = async function(req, res){
     Shark.find({}, function (err, data) {
@@ -36,4 +36,10 @@ exports.list = async function(req, res){
         });
         res.send(output);
     });
-};
+}
+
+exports.getView = async function(req, res){
+    res.render('guest', {
+        audiences: ['230', '226', '224', '223', '221', '219', '219A']
+    });
+}

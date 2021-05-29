@@ -14,11 +14,11 @@
         <main class="schedule">
             <section class="schedule-title container-fluid">
                 <h2>Розклад занять кафедри на</h2>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>сьогодні</option>
+                <select class="form-select" aria-label="Default select example" onchange="changeSelect(this.value)">
+                    <option selected value="0">сьогодні</option>
                     <option value="1">завтра</option>
                     <option value="2">післязавтра</option>
-                  </select>
+                </select>
             </section>
             <div class="schedule container-fluid">
                 <div class="schedule-container">
@@ -28,5 +28,8 @@
         </main>
     </div>
     <%- include('footer') %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/script/script-scheduleTable.js"></script>
 </body>
 </html>
