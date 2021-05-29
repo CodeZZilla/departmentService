@@ -41,9 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-require('./config/config-passport');
-app.use(passport.initialize());
-app.use(passport.session());
 
 const mainRouter = require('./routes/mainRouter.js');
 const guestRouter = require('./routes/guestRouter.js');
