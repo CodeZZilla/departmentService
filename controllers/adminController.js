@@ -1,12 +1,16 @@
 const Disciplines = require('../models/Disciplines');
+const Groups = require('../models/Groups');
 
 
 exports.getAll = function (req, res) {
     Disciplines.getAllDisciplines().then((allDiscipline) => {
-        console.log(allDiscipline)
-        res.render('admin', {
-            allDiscipline: allDiscipline
-        });
+        Groups.getAllGroups().then((allGroups)=>{
+            res.render('admin', {
+                allDiscipline: allDiscipline,
+                allGroups:allGroups
+            });
+        })
+
     })
 
 };
@@ -40,7 +44,7 @@ exports.logOut = function (req, res, next) {
 
 
 exports.addDiscipline = function (req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     Disciplines.addDisciplines(req.body).then(() =>
         res.send('OK!')
     )
@@ -49,5 +53,17 @@ exports.addDiscipline = function (req, res) {
 
 exports.deleteDiscipline = async function (req, res) {
     await Disciplines.deleteDisciplines(req.body);
+    res.send('ok!');
+}
+
+exports.addGroup = function (req, res) {
+     console.log(req.body)
+    Groups.addGroup(req.body).then(() =>
+        res.send('OK!')
+    )
+};
+
+exports.deleteGroup = async function (req, res) {
+    await Groups.deleteGroup(req.body);
     res.send('ok!');
 }

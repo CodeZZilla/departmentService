@@ -40,7 +40,7 @@ function deleteDiscipline(obj) {
 
                     $.each(data, function (key, value){
                         let str = "<div class=\"accordion\" id=\"accordionPanelsStayOpenExample\">\n" +
-                            "                                            <div class=\"discipline-block\" style=\"display: flex;  \">\n" +
+                            "                                              <div class=\"discipline-block\" style=\"display: flex;  \">\n" +
                             "                                                <div class=\"accordion-item\" style=\"width: 95%;\">\n" +
                             "                                                    <h2 class=\"accordion-header\" id=\"panelsStayOpen-headingTwo\" style=\"display: flex; justify-content: space-between;\">\n" +
                             "                                                        <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#panelsStayOpen-<%= allDiscipline[i].id_discipline %>\" aria-expanded=\"false\" aria-controls=\"panelsStayOpen-<%= allDiscipline[i].id_discipline %>\">\n" +
@@ -90,7 +90,6 @@ function deleteDiscipline(obj) {
             alert("error");
         });
 
-
     // // установим еще один обработчик завершения запроса
     // jqxhr.always(function () {
     //     alert("second finished");
@@ -118,5 +117,32 @@ function deleteDiscipline(obj) {
 
     //     }
     // });
+
+}
+
+function addGroup() {
+    $.ajax({
+        url: 'admin/addGroup',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            group: document.getElementById('group').value,
+        },          /* Параметры передаваемые в запросе. */
+
+    });
+
+}
+
+function deleteGroup(obj) {
+    console.log('dfsdsfsdfsd')
+    $.ajax({
+        url: 'admin/deleteGroup',           /* Куда пойдет запрос */
+        method: 'post',             /* Метод передачи (post или get) */
+        dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+        data: {
+            groupId: obj
+        },          /* Параметры передаваемые в запросе. */
+
+    });
 
 }

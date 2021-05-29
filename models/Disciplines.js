@@ -1,15 +1,14 @@
-
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const config = require('../config/config_mysql.js');
 
-const connection = mysql.createConnection(config);
+const pool = mysql.createPool(config);
 
 class Disciplines {
     static addDisciplines(obj) {
         return new Promise((resolve) => {
             const queryPosts = 'INSERT INTO `disciplines` (`name_discipline`,`abbreviation`) VALUES (?,?)';
             const arr = [obj.discipline, obj.abbreviation]
-            connection.query(queryPosts, arr,(error, results) => {
+            pool.query(queryPosts, arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
             });
@@ -19,7 +18,7 @@ class Disciplines {
     static getAllDisciplines(){
         return new Promise((resolve => {
             const queryPosts = 'SELECT * FROM disciplines';
-            connection.query(queryPosts,(error, results) => {
+            pool.query(queryPosts,(error, results) => {
                 if (error) throw error;
                 resolve(results);
             });
@@ -30,7 +29,7 @@ class Disciplines {
         return new Promise((resolve => {
             const queryPosts = 'delete from disciplines where id_discipline = ?';
             const arr = obj.id_discipline;
-            connection.query(queryPosts,arr,(error, results) => {
+            pool.query(queryPosts,arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
             });
