@@ -45,7 +45,7 @@ class Teachers{
                 pool.query(queryPosts2, arr, (error, result)=>{
                     if (error) throw error;
                     console.log(result)
-                    const pass = [translite(obj.name), translite(obj.surname),'TEACHER', result[0].id_teacher];
+                    const pass = [translite(obj.surname), translite(obj.name),'TEACHER', result[0].id_teacher];
                     const queryPosts3 = 'INSERT INTO `users` (`username`,`password`,`role`,`teacher_id`) VALUES (?,?,?,?)';
                     pool.query(queryPosts3, pass, (error, r)=>{
                         if (error) throw error;
