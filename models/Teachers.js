@@ -3,6 +3,8 @@ const config = require('../config/config_mysql.js');
 
 const pool = mysql.createPool(config);
 
+
+
 function translite(str)
 {
     const ru = ("А-а-Б-б-В-в-Ґ-ґ-Г-г-Д-д-Е-е-Ё-ё-Є-є-Ж-ж-З-з-И-и-І-і-Ї-ї-Й-й-К-к-Л-л-М-м-Н-н-О-о-П-п-Р-р-С-с-Т-т-У-у-Ф-ф-Х-х-Ц-ц-Ч-ч-Ш-ш-Щ-щ-Ъ-ъ-Ы-ы-Ь-ь-Э-э-Ю-ю-Я-я").split("-");
@@ -17,14 +19,25 @@ function translite(str)
     }
     return res;
 }
-class Cadets {
 
-    
-    static addCadets(obj){
+class Teachers{
+    static getAllTeachers(){
+        return new Promise((resolve) => {
+            const queryPosts = 'select * from lectures;';
+            pool.query(queryPosts, (error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        });
+    }
+
+
+
+    static addTeacher(obj){
         return new Promise((resolve) => {
             console.log(obj)
-            const queryPosts = 'INSERT INTO `cadets` (`name`,`surname`,`group_id`) VALUES (?,?,?)';
-            const queryPosts2 = 'SELECT id_cadet FROM cadets WHERE `name` = ? and `surname` = ?';
+            const queryPosts = 'INSERT INTO `teachers` (`name`,`surname`) VALUES (?,?)';
+            const queryPosts2 = 'SELECT id_teacher FROM teachers WHERE `name` = ? and `surname` = ?';
             const arr = [obj.name, obj.surname ];
             pool.query(queryPosts, arr,(error, results) => {
                 if (error) throw error;
@@ -32,8 +45,8 @@ class Cadets {
                 pool.query(queryPosts2, arr, (error, result)=>{
                     if (error) throw error;
                     console.log(result)
-                    const pass = [translite(obj.name), translite(obj.surname),'cadet', result[0].id_cadet];
-                    const queryPosts3 = 'INSERT INTO `users` (`username`,`password`,`role`,`cadet_id`) VALUES (?,?,?,?)';
+                    const pass = [translite(obj.name), translite(obj.surname),'teacher', result[0].id_teacher];
+                    const queryPosts3 = 'INSERT INTO `users` (`username`,`password`,`role`,`teacher_id`) VALUES (?,?,?,?)';
                     pool.query(queryPosts3, pass, (error, r)=>{
                         if (error) throw error;
                         resolve(r);
@@ -43,20 +56,10 @@ class Cadets {
         });
     }
 
-    static getAllCadets(){
+    static deleteTeacher(obj){
         return new Promise((resolve => {
-            const queryPosts = 'SELECT * FROM cadets';
-            pool.query(queryPosts,(error, results) => {
-                if (error) throw error;
-                resolve(results);
-            });
-        }));
-    }
-
-    static deleteCadets(obj){
-        return new Promise((resolve => {
-            const queryPosts = 'delete from cadets where id_cadet = ?';
-            const arr = obj.id_cadet;
+            const queryPosts = 'delete from lectures where id_lecture = ?';
+            const arr = obj.teacherId;
             pool.query(queryPosts,arr,(error, results) => {
                 if (error) throw error;
                 resolve(results);
@@ -64,17 +67,6 @@ class Cadets {
         }));
     }
 
-    static getCadetsById(id){
-        return new Promise((resolve => {
-            const queryPosts = 'select * from cadets where id_cadet = ?';
-            const arr = id
-            pool.query(queryPosts,arr,(error, results) => {
-                if (error) throw error;
-                resolve(results);
-            });
-        }));
-    }
 }
 
-module.exports = Cadets;
-
+module.exports = Teachers;
