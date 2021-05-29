@@ -41,12 +41,10 @@ adminRouter.post('/scheduleAdmin/getData', function (req, res){
 
 
 adminRouter.get('/logout', adminController.logOut);
-
-
 adminRouter.post('/addDiscipline',urlencodedParser, adminController.addDiscipline);
 adminRouter.post('/deleteDiscipline',urlencodedParser, adminController.deleteDiscipline)
 adminRouter.get('/getAll2', adminController.getAll2);
-
-
+adminRouter.post('/addGroup', adminController.addGroup)
+adminRouter.post('/deleteGroup', adminController.deleteGroup)
 
 module.exports=adminRouter;
