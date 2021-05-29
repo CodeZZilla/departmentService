@@ -152,6 +152,7 @@ main {
   padding: 5px;
   min-width: 250px;
   width: 100%;
+  max-width: 400px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -168,6 +169,7 @@ main {
 .schedule .schedule-block .text-group {
   font-weight: 900;
   font-size: 60px;
+  font-size: 5em;
   text-align: center;
   color: rgba(255, 255, 255, 0.815);
 }
@@ -180,6 +182,7 @@ main {
   font-weight: bold;
   font-size: 39px;
   line-height: 39px;
+  font-size: 2.5em;
   font-style: normal;
   text-align: center;
   color: #FFFFFF;
@@ -187,6 +190,7 @@ main {
 .schedule .schedule-block .teacher {
   font-weight: bold;
   font-size: 20px;
+  font-size: 1.5em;
   line-height: 20px;
   text-align: center;
   color: #FFFFFF;

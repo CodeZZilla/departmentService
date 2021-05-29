@@ -116,6 +116,7 @@ main{
     padding: 5px;
     min-width: 250px;
     width: 100%;
+    max-width: 400px;
     height: max-content;
     min-height: 100px;
     display: flex;
@@ -126,6 +127,7 @@ main{
     .text-group{
         font-weight: 900;
         font-size: 60px;
+        font-size: 5em;
         text-align: center;
         color: rgba(255, 255, 255, 0.815);
     }
@@ -136,6 +138,7 @@ main{
         font-weight: bold;
         font-size: 39px;
         line-height: 39px;
+        font-size: 2.5em;
         font-style: normal;
         text-align: center;
         color: #FFFFFF;
@@ -143,6 +146,7 @@ main{
     .teacher{
         font-weight: bold;
         font-size: 20px;
+        font-size: 1.5em;
         line-height: 20px;
         text-align: center;
         color: #FFFFFF;
