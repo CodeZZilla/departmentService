@@ -20,9 +20,7 @@ class Relations {
 
     }
 
-    static getRelations(obj){
 
-    }
 
     static getRelationById(id){
         return new Promise((resolve => {
