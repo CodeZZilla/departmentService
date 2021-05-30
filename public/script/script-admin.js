@@ -3,6 +3,7 @@
 const request = new XMLHttpRequest();
 
 document.getElementById("header_title").innerHTML = "Ви увійшли як адміністратор";
+document.querySelectorAll('.adm').forEach(x=>x.style.display="none");
 
 function addDiscipline() {
     $.post("/admin/addDiscipline", {

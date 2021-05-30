@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   height: -webkit-fill-available;
 }
@@ -105,7 +106,7 @@ main {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.hi-container .button:nth-child(2) {
+.hi-container .button:nth-child(3) {
   border-radius: 50px;
   background-image: linear-gradient(135deg, #E2B0FF 0%, #9F44D3 100%);
   -webkit-box-shadow: 0 20px 30px -6px rgba(171, 88, 219, 0.5);
@@ -115,8 +116,9 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: white;
+  font-weight: 600;
 }
-.hi-container .button:nth-child(1) {
+.hi-container .button:nth-child(2) {
   border-radius: 50px;
   background-image: linear-gradient(135deg, #81FBB8 0%, #28C76F 100%);
   -webkit-box-shadow: 0 20px 30px -6px rgba(60, 211, 128, 0.5);
@@ -126,10 +128,11 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: white;
+  font-weight: 600;
 }
-.hi-container .button:nth-child(4) {
+.hi-container .button:nth-child(1) {
   border-radius: 50px;
-  background-image: linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%);
+  background-image: linear-gradient(135deg, #abdcff75 0%, #0396FF 100%);
   -webkit-box-shadow: 0 20px 30px -6px rgba(30, 161, 255, 0.5);
           box-shadow: 0 20px 30px -6px rgba(30, 161, 255, 0.5);
   outline: none;
@@ -137,6 +140,7 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: white;
+  font-weight: 600;
 }
 .hi-container .button:nth-child(5) {
   border-radius: 50px;
@@ -148,6 +152,7 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: white;
+  font-weight: 600;
 }
 .hi-container .button:hover {
   -webkit-transform: translatey(10px);
@@ -161,7 +166,6 @@ main {
 .hi-container .btn-2 {
   -webkit-transform: translateX(-110px);
           transform: translateX(-110px);
-  background-image: linear-gradient(135deg, #E2B0FF 0%, #9F44D3 100%) !important;
 }
 .hi-container .btn-2:hover {
   transform: translateX(-110px) translateY(10px);
@@ -349,4 +353,53 @@ main {
 }
 .trash-icon:hover {
   opacity: 100%;
+}
+
+.classRegister-student table, .classRegister-student table {
+  border-collapse: collapse;
+  border: black 1px;
+  border-spacing: 1px;
+  /* Расстояние между ячейками */
+}
+.classRegister-student td, .classRegister-student th, .classRegister-student td, .classRegister-student th {
+  padding: 5px;
+  /* Поля вокруг текста */
+  border: 1px solid black;
+  /* Параметры рамки */
+}
+.classRegister-student .cadets-table, .classRegister-student .cadets-table {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.classRegister-student #triangle-topright, .classRegister-student #triangle-topright {
+  width: 0;
+  height: 0;
+  border-top: 70px solid #5F9EA0;
+  border-left: 145px solid transparent;
+  position: absolute;
+}
+.classRegister-student #triangle-bottomleft, .classRegister-student #triangle-bottomleft {
+  width: 0;
+  height: 0;
+  border-bottom: 70px solid #cecece;
+  border-right: 145px solid transparent;
+}
+.classRegister-student .lesontable, .classRegister-student .lesontable {
+  /* padding-top: 25px; */
+  padding-left: 10px;
+}
+.classRegister-student .lesontable2, .classRegister-student .lesontable2 {
+  padding-left: 55px;
+}
+.classRegister-student .linerrr, .classRegister-student .linerrr {
+  position: absolute;
+  margin-top: 33px;
+  border-bottom-color: black;
+  -webkit-transform: rotate(26deg);
+          transform: rotate(26deg);
+  width: 160px;
+}
+.classRegister-student .thclass, .classRegister-student .thclass {
+  margin: 0px;
+  padding: 0px;
 }

@@ -92,19 +92,21 @@ main{
       cursor: pointer;
       font-size: 24px;
       color: white;
+      font-weight: 600;
+
     }
     
 
     .button{
         transition: all .3s ease-in-out;
-        &:nth-child(2){
+        &:nth-child(3){
           @include createButton(150px, 60px, 50px,#E2B0FF,#9F44D3, rgba(171,88,219,0.5));
         }
-        &:nth-child(1){
+        &:nth-child(2){
           @include createButton(150px, 60px, 50px,#81FBB8,#28C76F, rgba(60,211,128,0.5));
         }
-        &:nth-child(4){
-          @include createButton(150px, 60px, 50px,#ABDCFF,#0396FF, rgba(30,161,255,0.5));
+        &:nth-child(1){
+          @include createButton(150px, 60px, 50px,#abdcff75,#0396FF, rgba(30,161,255,0.5));
         }
         &:nth-child(5){
           @include createButton(150px, 60px, 50px,#FEB692,#EA5455, rgba(238,103,97,0.5));
@@ -119,7 +121,8 @@ main{
     }
     .btn-2{
         transform: translateX(-110px);
-        background-image: linear-gradient( 135deg, #E2B0FF 0%, #9F44D3 100%) !important;
+
+
    
         &:hover{
       transform: translateX(-110px) translateY(10px);
