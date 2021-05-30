@@ -8,7 +8,7 @@ module.exports = function (roles) {
         try {
             let token = sec.tok;
             if (!token) {
-                return res.status(403).json({message: "Пользователь не авторизован"})
+                return res.status(403).render('403')
             }
             const user = jwt.verify(token, secret)
             req.user = user
@@ -18,12 +18,12 @@ module.exports = function (roles) {
             }
 
             if (!hasRole) {
-                return res.status(403).json({message: "У вас нет доступа"})
+                return res.status(403).render('403')
             }
             next();
         } catch (e) {
             console.log(e)
-            return res.status(403).json({message: "Пользователь не авторизован"})
+            return res.status(403).render('403')
         }
 
 
