@@ -2,6 +2,8 @@
 
 const request = new XMLHttpRequest();
 
+document.getElementById("header_title").innerHTML = "Ви увійшли як адміністратор";
+
 function addDiscipline() {
     $.post("/admin/addDiscipline", {
         discipline: document.getElementById('discipline').value,

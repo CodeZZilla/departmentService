@@ -1,0 +1,43 @@
+
+    <div class="modal fade" tabindex="-1" id="addConnectModal" aria-labelledby="addConnectModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Додати новий зв'язок</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <select id="select-group" class="form-select" aria-label="Floating label select example">
+                  <% for(let i=0; i<allGroups.length;i++){%>
+                  <option value="<%=allGroups[i].id_group%>"><%=allGroups[i].number_group%></option>
+                  <%}%>
+  
+                </select>
+                <label for="floatingSelect">Номер групи</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select id="select-discipline" class="form-select" aria-label="Floating label select example">
+                  <% for(let i=0; i<allDiscipline.length;i++){%>
+                  <option value="<%=allDiscipline[i].id_discipline%>"><%=allDiscipline[i].abbreviation%></option>
+                  <%}%>
+                </select>
+                <label for="floatingSelect">Назва дисципліни</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select id="select-teacher" class="form-select" aria-label="Floating label select example">
+                  <% for(let i=0; i<allTeachers.length;i++){%>
+                  <option value="<%=allTeachers[i].id_teacher%>"><%=allTeachers[i].surname%></option>
+                  <%}%>
+                </select>
+                <label for="floatingSelect">Викладач</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+              <button onclick="addRelation()" type="button" class="btn btn-primary">Зберегти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        

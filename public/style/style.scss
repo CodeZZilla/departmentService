@@ -297,3 +297,54 @@ main{
         opacity: 100%;
     }
 }
+.classRegister-student, .classRegister-student{
+    
+table {
+    border-collapse: collapse;
+    border:black 1px;
+    border-spacing: 1px; /* Расстояние между ячейками */
+}
+td, th {
+
+    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid black; /* Параметры рамки */
+
+}
+.cadets-table{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#triangle-topright {    
+    width: 0;
+    height: 0;
+    border-top: 70px solid #5F9EA0;
+    border-left: 145px solid transparent;
+    position: absolute;
+  }
+  #triangle-bottomleft {
+    width: 0;
+    height: 0;    
+    border-bottom: 70px solid #cecece;
+    border-right: 145px solid transparent;
+  }
+  .lesontable{
+      /* padding-top: 25px; */
+      padding-left: 10px;
+  }
+  .lesontable2{
+      padding-left: 55px;
+  }
+  .linerrr{
+   position: absolute;
+    margin-top: 33px;
+    border-bottom-color:black;
+    transform: rotate(26deg);
+    width: 160px;          
+  }
+  .thclass{
+      margin: 0px;
+      padding: 0px;
+  }
+
+
+}
