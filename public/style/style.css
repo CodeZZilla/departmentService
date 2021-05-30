@@ -41,7 +41,7 @@ header .header-account h6 {
 
 footer {
   width: 100%;
-  background-color: #C0C0C0;
+  background-color: #dadada;
   position: absolute;
   bottom: 0;
 }
@@ -81,7 +81,7 @@ footer {
 
 main {
   padding: 20px 0;
-  padding-bottom: 130px;
+  padding-bottom: 4em;
 }
 
 .hi-container {
