@@ -4,8 +4,6 @@ const username = require('../controllers/authController')
 
 
 exports.getAll = function (req,res){
-
-
     console.log(username.username);
     Teachers.getOneById(username.username).then(result => {
         console.log(result[0].role);

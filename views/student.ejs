@@ -14,7 +14,7 @@
         <main>
             <div class="container-fluid">
               <section class="nav-teacher" style="display: flex;">
-                  <h1>Вітаю, Вірста Анастасія!</h1>
+                  <h1>Вітаю, <%=all[0].stud%>!</h1>
                   <button type="button" class="btn btn-outline-primary ms-3" data-bs-toggle="modal"
                   data-bs-target="#editProfileModal">
                       Налаштування профілю
@@ -32,24 +32,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>ООП</td>
-                      <td>281</td>
-                      <td style="width: 170px">
-                        <a href="" type="button" class="btn btn-outline-success btn-sm">
-                            <!-- route edit group  -->
-                            Журнал оцінювання
-                        </a>
-                    </td>
-                    </tr>
+                  <% for (let i =0; i< all.length; i++){%>
+                      <tr>
+                          <th scope="row">1</th>
+                          <td><%= all[i].abbreviation%></td>
+                          <td><%=all[i].number_group%></td>
+                          <td style="width: 170px">
+                              <a href="" type="button" class="btn btn-outline-success btn-sm">
+                                  <!-- route edit group  -->
+                                  Журнал оцінювання
+                              </a>
+                          </td>
+                      </tr>
+                  <%}%>
+
                   </tbody>
                 </table>
               </section>
             </div>
         </main>
         <%- include('view-blocks/footer') %>
-        <%- include('view-blocks/modals') %>
     </div>
 </body>
 

@@ -75,7 +75,33 @@ class Cadets {
         }));
     }
 
+    static getOneById(username) {
+        return new Promise((resolve => {
+            const queryPosts = 'select * from users where username = ?';
 
+            pool.query(queryPosts, username, (error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
+
+    static getAllByUsername(obj) {
+        return new Promise((resolve => {
+            const query = 'select cadets.id_cadet from users , cadets WHERE users.username=? AND cadets.id_cadet=users.cadet_id;'
+            const query2 ='SELECT groups.number_group, CONCAT(cadets.name," ",cadets.surname)  as stud, disciplines.abbreviation FROM groups, cadets, relations_cdl, disciplines  WHERE cadets.id_cadet=? and groups.id_group=cadets.group_id and groups.id_group=relations_cdl.group_id and relations_cdl.giscipline_id=disciplines.id_discipline'
+            pool.query(query, obj, (error, results) => {
+                if (error) throw error;
+                pool.query(query2, results[0].id_cadet, (error, results) => {
+                    if (error) throw error;
+                    console.log(results)
+                    resolve(results);
+                })
+                // console.log(results)
+                // resolve(results);
+            });
+        }));
+    }
 }
 
 module.exports = Cadets;

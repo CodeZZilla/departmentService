@@ -1,9 +1,20 @@
-const Teachers= require('../models/Cadets')
+const Cadets= require('../models/Cadets')
+const username = require('../controllers/authController')
 
 
 exports.getAll = function (req,res){
-    res.render('student');
+    console.log(username.username);
+    Cadets.getOneById(username.username).then(result => {
+        console.log(result[0].role);
+        Cadets.getAllByUsername(result[0].username).then(all=>{
+            console.log(all);
+            res.render('student',{
+                all:all
+            });
+        })
+    });
 };
+
 
 exports.logOut = function (req, res, next) {
     req.logout();
@@ -19,3 +30,4 @@ exports.logOut = function (req, res, next) {
        res.redirect('/');
     });
 };
+
