@@ -1,6 +1,22 @@
 const Teachers= require('../models/Teachers')
+const mysql = require('mysql2');
+const username = require('../controllers/authController')
+
+
 exports.getAll = function (req,res){
-    res.render('teacher');
+
+
+    console.log(username.username);
+    Teachers.getOneById(username.username).then(result => {
+        console.log(result[0].role);
+        Teachers.getAllByUsername(result[0].username).then(all=>{
+            console.log(all);
+            res.render('teacher',{
+                all:all
+            });
+        })
+    });
+
 };
 
 exports.logOut = function (req, res, next) {
@@ -8,12 +24,5 @@ exports.logOut = function (req, res, next) {
 
     res.clearCookie('keyboard cat' , {path:'/'});
 
-    req.session.destroy(function (err) {
-       if (err)
-           return next(err);
-
-       req.session = null;
-
-       res.redirect('/');
-    });
+    res.redirect('/');
 };

@@ -108,6 +108,6 @@ exports.getPageDiscipline = function (req, res) {
 }
 
 exports.addRelation = async function (req, res) {
-    console.log(req.body)
+    console.log('req.body')
     await Relation.addRelation(req.body);
 }

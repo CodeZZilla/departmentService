@@ -76,6 +76,33 @@ class Teachers{
         }));
     }
 
+    static getOneById(username) {
+        return new Promise((resolve => {
+            const queryPosts = 'select * from users where username = ?';
+
+            pool.query(queryPosts, username, (error, results) => {
+                if (error) throw error;
+                resolve(results);
+            });
+        }));
+    }
+
+    static getAllByUsername(obj) {
+        return new Promise((resolve => {
+            const query = 'select teachers.id_teacher from users , teachers WHERE users.username=? AND teachers.id_teacher=users.teacher_id;'
+            const query2 ='SELECT   relations_cdl.id_relation,  groups.number_group, CONCAT(teachers.name," ",teachers.surname) as teach,  disciplines.abbreviation, relations_cdl.giscipline_id FROM groups, teachers, disciplines, relations_cdl WHERE teachers.id_teacher=?  and relations_cdl.giscipline_id=disciplines.id_discipline  and  teachers.id_teacher=relations_cdl.teacher_id and groups.id_group=relations_cdl.group_id'
+            pool.query(query, obj, (error, results) => {
+                if (error) throw error;
+                pool.query(query2, results[0].id_teacher, (error, results) => {
+                    console.log(results)
+                    resolve(results);
+                })
+                // console.log(results)
+                // resolve(results);
+            });
+        }));
+    }
+
 }
 
 module.exports = Teachers;

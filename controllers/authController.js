@@ -18,6 +18,7 @@ class authController {
     login(req, res) {
         try {
             const {username, password} = req.body;
+            module.exports.username = username;
             pool.query('SELECT * FROM users WHERE username=?', username, function (err, user) {
 
                 if (!user) {
