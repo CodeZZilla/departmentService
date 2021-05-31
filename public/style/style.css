@@ -270,7 +270,8 @@ main {
 }
 .schedule .schedule-block .text-group {
   font-weight: 900;
-  font-size: 50ex;
+  font-size: 60px;
+  font-size: 7em;
   line-height: 1em;
   text-align: center;
   color: rgba(255, 255, 255, 0.915);
@@ -282,15 +283,17 @@ main {
 }
 .schedule .schedule-block .discipline {
   font-weight: bold;
+  font-size: 39px;
   line-height: 1em;
-  font-size: 20ex;
+  font-size: 3.5em;
   font-style: normal;
   text-align: center;
   color: #FFFFFF;
 }
 .schedule .schedule-block .teacher {
   font-weight: bold;
-  font-size: 10ex;
+  font-size: 20px;
+  font-size: 2.5em;
   text-align: center;
   color: #FFFFFF;
 }
@@ -411,8 +414,8 @@ main {
   padding: 0.5em;
 }
 .schedule .schedule-table th {
-  font-size: 15ex;
-  font-weight: 900;
+  font-size: 2.5em;
+  font-weight: 700;
   text-align: center;
   padding: 0 !important;
 }
@@ -464,4 +467,16 @@ main {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+  .schedule {
+    font-size: 50px;
+  }
 }
