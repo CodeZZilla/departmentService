@@ -1,8 +1,8 @@
 <div class="schedule-table ">
-    <table class="table">
+    <table class=" table-borderless p-0">
         <thead>
             <tr>
-                <th>№ ауд</th>
+                <th></th>
                 <th>1 пара</th>
                 <th>2 пара</th>
                 <th>3 пара</th>
@@ -13,7 +13,7 @@
         <tbody>
         <% for (let i = 0; i < audiences.length; i++){ %>
             <tr>
-                <th><%= audiences[i] %></th>
+                <th><div><%= audiences[i] %></div></th>
                 <td>
                     <form class="form" id="form_<%= audiences[i] %>_1">
                         <div  class="schedule-block rounded shadow-sm">

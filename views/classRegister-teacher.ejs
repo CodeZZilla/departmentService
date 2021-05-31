@@ -13,80 +13,35 @@
         <%- include('view-blocks/header') %>
         <main>
             <section class="classRegister-teacher container-fluid">
-                <table class="cadets-table table table-striped">
-                    <% var arr = []; %>
-                    <% var marks = [] %>
-                    <% for(var i = 0; i < params.length;i++) { %>
-                        <% if(!arr.includes(params[i].lastname)){ %>
-                            <%
-                                arr.push(params[i].lastname) %>
-                            <% marks.push({
-                                name: params[i].firstname,
-                                lastName: params[i].lastname,
-                                marks: [{mark: params[i].mark, numberOfL: params[i].numberOfL, type: params[i].type}]
-                            }) %>
-                            <%      %>
-                        <% }else{ %>
-                            <% marks.forEach((m) => {
-                                if (m.lastName === params[i].lastname) {
-                                    m.marks.push({
-                                        mark: params[i].mark,
-                                        numberOfL: params[i].numberOfL,
-                                        type: params[i].type
-                                    })
-                                }
-                            }) %>
-                        <% } %>
-                    <% } %>
-    
-                    <% for(var i = 0; i < marks.length;i++){ %>
-                    <% marks[i].marks.sort(function (a, b) { %>
-                        <% var result; %>
-                        <% a = a.numberOfL.split('.'); %>
-                        <% b = b.numberOfL.split('.'); %>
-    
-                        <% while (a.length) { %>
-                        <% result = a.shift() - (b.shift() || 0); %>
-                        <% if (result) { %>
-                        <% return result; %>
-                        <% } %>
-                        <% } %>
-    
-                        <% return -b.length; %>
-                    <% }).join(','); %>
-                    <% } %>
-    
-                    <tr>
-                        <th class="thclass">
-    
-                            <div id="triangle-bottomleft">
-                                <p class="lesontable2"> Заняття</p>
-    
-                                <p class="lesontable"> Прізвище</p>
-    
-                            </div>
-                        </th>
-                        <th>Сума</th>
-                        <% for(var i = 0; i < marks[0].marks.length;i++) { %>
-                            <th><%= marks[0].marks[i].numberOfL %></th>
-                        <% } %>
-                    </tr>
-    
-                    <% for(var i = 0; i < arr.length;i++) { %>
-                        <tr>
-                            <% var count = 0 %>
-                            <% for(var j = 0; j < marks[i].marks.length;j++){ %>
-                                <% count += marks[i].marks[j].mark %>
-                            <% } %>
-                            <td><%= marks[i].lastName %> <%= marks[i].name[0] %>.</td>
-                            <td><%= count.toFixed(2) %></td>
-                            <% for(var j = 0; j < marks[i].marks.length;j++){ %>
-                                <td><%= marks[i].marks[j].mark %></td>
-                            <% } %>
-                        </tr>
-                    <% } %>
-    
-                </table>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
             </section>
         </main>
         <%- include('view-blocks/footer') %>

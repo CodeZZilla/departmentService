@@ -13,88 +13,208 @@
         <%- include('view-blocks/header') %>
         <main>
             <section class="classRegister-student container-fluid">
-                <table class="cadets-table table table-striped">
-                    <% var arr = []; %>
-                    <% var marks = [] %>
-                    <% for(var i = 0; i < params.length;i++) { %>
-                        <% if(!arr.includes(params[i].lastname)){ %>
-                            <%
-                                arr.push(params[i].lastname) %>
-                            <% marks.push({
-                                name: params[i].firstname,
-                                lastName: params[i].lastname,
-                                marks: [{mark: params[i].mark, numberOfL: params[i].numberOfL, type: params[i].type}]
-                            }) %>
-                            <%      %>
-                        <% }else{ %>
-                            <% marks.forEach((m) => {
-                                if (m.lastName === params[i].lastname) {
-                                    m.marks.push({
-                                        mark: params[i].mark,
-                                        numberOfL: params[i].numberOfL,
-                                        type: params[i].type
-                                    })
-                                }
-                            }) %>
-                        <% } %>
-                    <% } %>
-    
-                    <% for(var i = 0; i < marks.length;i++){ %>
-                    <% marks[i].marks.sort(function (a, b) { %>
-                        <% var result; %>
-                        <% a = a.numberOfL.split('.'); %>
-                        <% b = b.numberOfL.split('.'); %>
-    
-                        <% while (a.length) { %>
-                        <% result = a.shift() - (b.shift() || 0); %>
-                        <% if (result) { %>
-                        <% return result; %>
-                        <% } %>
-                        <% } %>
-    
-                        <% return -b.length; %>
-                    <% }).join(','); %>
-                    <% } %>
-    
-                    <tr>
-                        <th class="thclass">
-    
-                            <div id="triangle-bottomleft">
-                                <p class="lesontable2"> Заняття</p>
-    
-                                <p class="lesontable"> Прізвище</p>
-    
-                            </div>
-                        </th>
-                        <th>Сума</th>
-                        <% for(var i = 0; i < marks[0].marks.length;i++) { %>
-                            <th><%= marks[0].marks[i].numberOfL %></th>
-                        <% } %>
-                    </tr>
-    
-                    <% for(var i = 0; i < arr.length;i++) { %>
+
+                <table class="cadets-table-new table ">
+                    <tbody>
                         <tr>
-                            <% var count = 0 %>
-                            <% for(var j = 0; j < marks[i].marks.length;j++){ %>
-                                <% count += marks[i].marks[j].mark %>
-                            <% } %>
-                            <td><%= marks[i].lastName %> <%= marks[i].name[0] %>.</td>
-                            <td><%= count.toFixed(2) %></td>
-                            <% for(var j = 0; j < marks[i].marks.length;j++){ %>
-                                <td><%= marks[i].marks[j].mark %></td>
-                            <% } %>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ПЗ 1.1</h4>
+                                        <h5><b>Тема: </b> Введення в розробку ПЗ</h5>
+                                    <p> <b>Оцінка за заняття:</b>  10</p>
+                                    </div>
+                                    <div class="second" >
+                                        <!-- <img src="..\img\1.png" alt="" style="max-height: 130px; margin-right: 2em;"> -->
+                                        <div id="chart1">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
-                    <% } %>
-    
+
+                        
+                        <tr>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ПЗ 1.2</h4>
+                                        <h5><b>Тема: </b> Система контролю версій</h5>
+                                    <p> <b>Оцінка за заняття:</b>  10</p>
+                                    </div>
+                                    <div class="second">
+                                        <div id="chart2">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ГЗ 1.5</h4>
+                                        <h5><b>Тема: </b> Практика побудови простих веб-сторінок.</h5>
+                                    <p> <b>Оцінка за заняття:</b>  10</p>
+                                    </div>
+                                    <div class="second">
+                                        <div id="chart3">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ГЗ 2.1</h4>
+                                        <h5><b>Тема: </b> Управління конструкцій в JS.</h5>
+                                    <p> <b>Оцінка за заняття:</b>  1</p>
+                                    </div>
+                                    <div class="second">
+                                        <div id="chart4">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+                        
+                        <tr>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ПЗ 2.5</h4>
+                                        <h5><b>Тема: </b> ООП в JS.</h5>
+                                    <p> <b>Оцінка за заняття:</b>  10</p>
+                                    </div>
+                                    <div class="second">
+                                        <div id="chart5">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                            <td>
+                                <div class="td-block" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="first">
+                                        <h4>ПЗ 3.6</h4>
+                                        <h5><b>Тема: </b> Введеня в основи nodeJS.</h5>
+                                    <p> <b>Оцінка за заняття:</b>  10</p>
+                                    </div>
+                                    <div class="second">
+                                        <div id="chart6">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                    <!-- // -->
+
                 </table>
             </section>
         </main>
         <%- include('view-blocks/footer') %>
     </div>
+
+
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
+
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
 </body>
 
 <script>
     document.getElementById("header_title").innerHTML = "";
   document.querySelectorAll('.teach').forEach(x=>x.style.display="none");
+
+
+  var data = [
+  {x: "Зараховано", value: 100},
+  {x: "Не зараховано", value: 90}
+];
+
+var data2 = [
+  {x: "Зараховано", value: 50},
+  {x: "Не зараховано", value: 40}
+];
+
+var data3 = [
+  {x: "Зараховано", value: 4},
+  {x: "Не зараховано", value: 3}
+];
+
+var data4 = [
+  {x: "Зараховано", value: 2},
+  {x: "Не зараховано", value: 1}
+];
+
+var data5 = [
+  {x: "Зараховано", value: 5},
+  {x: "Не зараховано", value: 2.3}
+];
+
+
+var data6 = [
+  {x: "Зараховано", value: 100},
+  {x: "Не зараховано", value: 10}
+];
+// create a pie chart and set the data
+chart = anychart.pie(data);
+chart2 = anychart.pie(data2);
+chart3 = anychart.pie(data3);
+chart4 = anychart.pie(data4);
+chart5 = anychart.pie(data5);
+chart6 = anychart.pie(data6);
+
+/* set the inner radius
+(to turn the pie chart into a doughnut chart)*/
+chart.innerRadius("30%");
+chart2.innerRadius("30%");
+chart3.innerRadius("30%");
+chart4.innerRadius("30%");
+chart5.innerRadius("30%");
+chart6.innerRadius("30%");
+
+// set the container id
+chart.container("chart1");
+chart2.container("chart2");
+chart3.container("chart3");
+chart4.container("chart4");
+chart5.container("chart5");
+chart6.container("chart6");
+
+// initiate drawing the chart
+chart.draw();
+chart2.draw();
+chart3.draw();
+chart4.draw();
+chart5.draw();
+chart6.draw();
+
+
 </script>
 </html>

@@ -7,4 +7,8 @@ const roleMiddleware = require('../middleware/roleMiddleware');
 
 studentRouter.get('/', roleMiddleware(['CADET']), studentController.getAll);
 
+
+//eto edalit
+studentRouter.get('/schedule', studentController.register )
+
 module.exports=studentRouter;

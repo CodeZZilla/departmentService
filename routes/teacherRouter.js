@@ -9,6 +9,8 @@ const roleMiddleware = require('../middleware/roleMiddleware');
 
 teacherRouter.get('/', roleMiddleware(['TEACHER']), teacherController.getAll);
 
+teacherRouter.get('/register', teacherController.getRegister);
+
 
 
 teacherRouter.get('/logout', teacherController.logOut);

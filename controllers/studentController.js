@@ -15,6 +15,9 @@ exports.getAll = function (req,res){
     });
 };
 
+exports.register = function (req,res){
+    res.render('classRegister-student')
+}
 
 exports.logOut = function (req, res, next) {
     req.logout();

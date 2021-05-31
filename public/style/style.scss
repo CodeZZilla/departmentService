@@ -186,84 +186,175 @@ main{
     }
     .free{
         align-items: center;
-        background: rgb(238,174,202);
-        background: radial-gradient(circle, rgb(233, 198, 213) 10%, rgb(187, 209, 235) 100%);
+        background: rgba(238, 174, 202, 0.755);
+        background: radial-gradient(circle, rgba(233, 198, 213, 0.755) 10%, rgb(187, 209, 235) 100%);
     }
     .gray{
         filter: grayscale(100);
         -webkit-filter: grayscale(100);
 }
+.schedule-container{
+    background: white;
+}
 .schedule-block{
-    // background-color: $pz;
-    // margin: 40px;
-    padding: 5px;
+    // margin: 10px;
     min-width: 20em;
     width: 100%;
-    max-width: 400px;
-    // height: inherit;
-    // height: 100%;
     min-height: 130px;
+    height: 100%;
     display: flex;
-    margin: auto;
+    align-items: center;
     justify-content: space-around;
     p{
         margin: 0;
     }
     .text-group{
         font-weight: 900;
-        font-size: 60px;
-        font-size: 5em;
+        // font-size: 60px;
+        font-size: 50ex;
+        line-height: 1em;
         text-align: center;
-        color: rgba(255, 255, 255, 0.815);
+        color: rgba(255, 255, 255, 0.915);
     }
     .second{
         align-self: center;
     }
     .discipline{
         font-weight: bold;
-        font-size: 39px;
-        line-height: 39px;
-        font-size: 2.5em;
+        // font-size: 39px;
+        line-height: 1em;
+        font-size: 20ex;
         font-style: normal;
         text-align: center;
         color: #FFFFFF;
     }
     .teacher{
         font-weight: bold;
-        font-size: 20px;
-        font-size: 1.5em;
-        line-height: 20px;
+        // font-size: 20px;
+        font-size: 10ex;
         text-align: center;
         color: #FFFFFF;
     }
-    .form{
-        height: inherit;
-        align-self: center;
+    form{
+        height: 100%;
     }
     td{
         justify-content: center;
         display: flex;
-        // height: 100%;
     }
 }
 .schedule-block-admin{
     background-color: $platinum-color;
-    // margin: 40px;
+    //margin: 40px;
     width: 20em;
     height: max-content;
     display: flex;
 }
+.time{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    color: rgb(111, 111, 111);
+    
+.clock {
+    // padding: 1em;
+    height: 5vh;
+    font-size: 5vh;
+    // font-family: sans-serif;
+    line-height: 5vh;
+    display: flex;
+    position: relative;
+    /*background: green;*/
+    overflow: hidden;
+  }
+  
+  .clock::before, .clock::after {
+    content: '';
+    width: 5ch;
+    height: 1vh;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .clock::after {
+    bottom: 0;
+  }
+  
+  .clock > div {
+    display: flex;
+  }
+  
+  .tick {
+    line-height: 4vh;
+  }
+  
+  .tick-hidden {
+    opacity: 0;
+  }
+  
+  .move {
+    animation: move linear 1s infinite;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(0vh);
+    }
+    to {
+      transform: translateY(-5vh);
+      -webkit-transform: translateY(-5vh);
+      -moz-transform: translateY(-5vh);
+      -ms-transform: translateY(-5vh);
+      -o-transform: translateY(-5vh);
+}
+  }
+  
+  
+}
 .schedule-table{
+    table{
+        height: 95vh;
+        width: 100vw;
+    }
     tr{
         text-align: center;
-
     }
     .td{
         height: 100%;
         min-height: 100%;
     }
     form{
-        height: inherit;
+        height: 100%;
+        padding-block-start: .5em;
+        padding-block-end: .5em;
+        padding: .5em;
+    }
+    th{
+        font-size: 15ex;
+        font-weight: 900;
+        text-align: center;
+        padding: 0 !important;
+    }
+    thead{
+        th{
+        }
+    }
+    tbody{
+        th{
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+        }
+        th>div{
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
     .schedule-title{
@@ -302,52 +393,54 @@ main{
 }
 .classRegister-student, .classRegister-student{
     
-table {
-    border-collapse: collapse;
-    border:black 1px;
-    border-spacing: 1px; /* Расстояние между ячейками */
+// table {
+//     border-collapse: collapse;
+//     border:black 1px;
+//     border-spacing: 1px; /* Расстояние между ячейками */
+// }
+// td, th {
+
+//     padding: 5px; /* Поля вокруг текста */
+//     border: 1px solid black; /* Параметры рамки */
+
+// }
+// .cadets-table{
+//     margin-top: 20px;
+//     margin-left: 15px;
+// }
+// #triangle-topright {    
+//     width: 0;
+//     height: 0;
+//     border-top: 70px solid #5F9EA0;
+//     border-left: 145px solid transparent;
+//     position: absolute;
+//   }
+//   #triangle-bottomleft {
+//     width: 0;
+//     height: 0;    
+//     border-bottom: 70px solid #cecece;
+//     border-right: 145px solid transparent;
+//   }
+//   .lesontable{
+//       /* padding-top: 25px; */
+//       padding-left: 10px;
+//   }
+//   .lesontable2{
+//       padding-left: 55px;
+//   }
+//   .thclass{
+//       margin: 0px;
+//       padding: 0px;
+//   }
+
+
 }
-td, th {
-
-    padding: 5px; /* Поля вокруг текста */
-    border: 1px solid black; /* Параметры рамки */
+.cadets-table-new{
 
 }
-.cadets-table{
-    margin-top: 20px;
-    margin-left: 15px;
-}
-#triangle-topright {    
-    width: 0;
-    height: 0;
-    border-top: 70px solid #5F9EA0;
-    border-left: 145px solid transparent;
-    position: absolute;
-  }
-  #triangle-bottomleft {
-    width: 0;
-    height: 0;    
-    border-bottom: 70px solid #cecece;
-    border-right: 145px solid transparent;
-  }
-  .lesontable{
-      /* padding-top: 25px; */
-      padding-left: 10px;
-  }
-  .lesontable2{
-      padding-left: 55px;
-  }
-  .linerrr{
-   position: absolute;
-    margin-top: 33px;
-    border-bottom-color:black;
-    transform: rotate(26deg);
-    width: 160px;          
-  }
-  .thclass{
-      margin: 0px;
-      padding: 0px;
-  }
-
-
+.chart {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

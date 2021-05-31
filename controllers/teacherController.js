@@ -16,6 +16,9 @@ exports.getAll = function (req,res){
     });
 
 };
+exports.getRegister = function(req,res){
+    res.render('classRegister-teacher');
+}
 
 exports.logOut = function (req, res, next) {
     req.logout();
@@ -24,3 +27,4 @@ exports.logOut = function (req, res, next) {
 
     res.redirect('/');
 };
+

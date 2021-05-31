@@ -11,17 +11,41 @@
 <body>
     <%- include('view-blocks/header') %>
     <div class="wrapper">
-        <main class="schedule">
-            <section class="schedule-title container-fluid">
+        <main class="schedule container-fluid">
+            <section class="schedule-title ">
                 <h2>Розклад занять кафедри на</h2>
                 <select class="form-select" aria-label="Default select example" onchange="changeSelect(this.value)">
                     <option selected value="0">сьогодні</option>
                     <option value="1">завтра</option>
                     <option value="2">післязавтра</option>
                 </select>
+                <button class="btn" onclick="fullscreenFunc()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10.999v-10.999h-11l3.379 3.379-14.379 14.378v-15.757h9v-2h-11v24h24v-11h-2v9h-15.758l14.379-14.379 3.379 3.378z"/></svg>
+                </button>
             </section>
-            <div class="schedule container-fluid">
-                <div class="schedule-container">
+            <div class="schedule ms-2">
+                <div class="schedule-container" id="schedule-container">
+                    <div class="time " id="time">
+                        <div class="clock">
+                            <div class="hours">
+                              <div class="first">
+                                <div class="number">0</div>
+                              </div>
+                              <div class="second">
+                                <div class="number">0</div>
+                              </div>
+                            </div>
+                            <div class="tick">:</div>
+                            <div class="minutes">
+                              <div class="first">
+                                <div class="number">0</div>
+                              </div>
+                              <div class="second">
+                                <div class="number">0</div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                     <%- include('view-blocks/scheduleTable.ejs') %>
                 </div>
             </div>

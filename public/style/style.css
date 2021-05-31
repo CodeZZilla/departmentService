@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   height: -webkit-fill-available;
 }
@@ -242,23 +241,27 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #eeaeca;
-  background: radial-gradient(circle, #e9c6d5 10%, #bbd1eb 100%);
+  background: rgba(238, 174, 202, 0.755);
+  background: radial-gradient(circle, rgba(233, 198, 213, 0.755) 10%, #bbd1eb 100%);
 }
 .schedule .gray {
   filter: grayscale(100);
   -webkit-filter: grayscale(100);
 }
+.schedule .schedule-container {
+  background: white;
+}
 .schedule .schedule-block {
-  padding: 5px;
   min-width: 20em;
   width: 100%;
-  max-width: 400px;
   min-height: 130px;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -267,10 +270,10 @@ main {
 }
 .schedule .schedule-block .text-group {
   font-weight: 900;
-  font-size: 60px;
-  font-size: 5em;
+  font-size: 50ex;
+  line-height: 1em;
   text-align: center;
-  color: rgba(255, 255, 255, 0.815);
+  color: rgba(255, 255, 255, 0.915);
 }
 .schedule .schedule-block .second {
   -ms-flex-item-align: center;
@@ -279,26 +282,20 @@ main {
 }
 .schedule .schedule-block .discipline {
   font-weight: bold;
-  font-size: 39px;
-  line-height: 39px;
-  font-size: 2.5em;
+  line-height: 1em;
+  font-size: 20ex;
   font-style: normal;
   text-align: center;
   color: #FFFFFF;
 }
 .schedule .schedule-block .teacher {
   font-weight: bold;
-  font-size: 20px;
-  font-size: 1.5em;
-  line-height: 20px;
+  font-size: 10ex;
   text-align: center;
   color: #FFFFFF;
 }
-.schedule .schedule-block .form {
-  height: inherit;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.schedule .schedule-block form {
+  height: 100%;
 }
 .schedule .schedule-block td {
   -webkit-box-pack: center;
@@ -318,6 +315,86 @@ main {
   display: -ms-flexbox;
   display: flex;
 }
+.schedule .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 400;
+  color: #6f6f6f;
+}
+.schedule .time .clock {
+  height: 5vh;
+  font-size: 5vh;
+  line-height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  /*background: green;*/
+  overflow: hidden;
+}
+.schedule .time .clock::before, .schedule .time .clock::after {
+  content: "";
+  width: 5ch;
+  height: 1vh;
+  position: absolute;
+  z-index: 2;
+}
+.schedule .time .clock::after {
+  bottom: 0;
+}
+.schedule .time .clock > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.schedule .time .tick {
+  line-height: 4vh;
+}
+.schedule .time .tick-hidden {
+  opacity: 0;
+}
+.schedule .time .move {
+  -webkit-animation: move linear 1s infinite;
+          animation: move linear 1s infinite;
+}
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-5vh);
+    -webkit-transform: translateY(-5vh);
+    -moz-transform: translateY(-5vh);
+    -ms-transform: translateY(-5vh);
+    -o-transform: translateY(-5vh);
+  }
+}
+@keyframes move {
+  from {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-5vh);
+    -webkit-transform: translateY(-5vh);
+    -moz-transform: translateY(-5vh);
+    -ms-transform: translateY(-5vh);
+    -o-transform: translateY(-5vh);
+  }
+}
+.schedule .schedule-table table {
+  height: 95vh;
+  width: 100vw;
+}
 .schedule .schedule-table tr {
   text-align: center;
 }
@@ -326,7 +403,34 @@ main {
   min-height: 100%;
 }
 .schedule .schedule-table form {
-  height: inherit;
+  height: 100%;
+  -webkit-padding-before: 0.5em;
+          padding-block-start: 0.5em;
+  -webkit-padding-after: 0.5em;
+          padding-block-end: 0.5em;
+  padding: 0.5em;
+}
+.schedule .schedule-table th {
+  font-size: 15ex;
+  font-weight: 900;
+  text-align: center;
+  padding: 0 !important;
+}
+.schedule .schedule-table tbody th > div {
+  min-height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .schedule .schedule-title {
   display: -webkit-box;
@@ -355,51 +459,9 @@ main {
   opacity: 100%;
 }
 
-.classRegister-student table, .classRegister-student table {
-  border-collapse: collapse;
-  border: black 1px;
-  border-spacing: 1px;
-  /* Расстояние между ячейками */
-}
-.classRegister-student td, .classRegister-student th, .classRegister-student td, .classRegister-student th {
-  padding: 5px;
-  /* Поля вокруг текста */
-  border: 1px solid black;
-  /* Параметры рамки */
-}
-.classRegister-student .cadets-table, .classRegister-student .cadets-table {
-  margin-top: 20px;
-  margin-left: 15px;
-}
-.classRegister-student #triangle-topright, .classRegister-student #triangle-topright {
-  width: 0;
-  height: 0;
-  border-top: 70px solid #5F9EA0;
-  border-left: 145px solid transparent;
-  position: absolute;
-}
-.classRegister-student #triangle-bottomleft, .classRegister-student #triangle-bottomleft {
-  width: 0;
-  height: 0;
-  border-bottom: 70px solid #cecece;
-  border-right: 145px solid transparent;
-}
-.classRegister-student .lesontable, .classRegister-student .lesontable {
-  /* padding-top: 25px; */
-  padding-left: 10px;
-}
-.classRegister-student .lesontable2, .classRegister-student .lesontable2 {
-  padding-left: 55px;
-}
-.classRegister-student .linerrr, .classRegister-student .linerrr {
-  position: absolute;
-  margin-top: 33px;
-  border-bottom-color: black;
-  -webkit-transform: rotate(26deg);
-          transform: rotate(26deg);
-  width: 160px;
-}
-.classRegister-student .thclass, .classRegister-student .thclass {
-  margin: 0px;
-  padding: 0px;
+.chart {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
